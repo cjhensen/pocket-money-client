@@ -1,9 +1,17 @@
-import {TEST_ACTION} from '../actions';
-const initialState = {};
+import {CHANGE_VIEW} from '../actions';
+
+// index, signup, login, overview, transactions, categories, insights, settings
+const initialState = {
+  currentView: 'index',
+  isLoggedIn: false
+};
 
 export const pmReducer = (state = initialState, action) => {
-  if(action.type === TEST_ACTION) {
-    console.log('test action working');
+  if(action.type === CHANGE_VIEW) {
+    console.log('change view action working');
+    return Object.assign({}, state, {
+      currentView: action.view
+    });
   }
   return state;
 };

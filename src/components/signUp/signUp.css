@@ -1,0 +1,29 @@
+#sign-up form input {
+  background: #eaf3f9;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #c8d4e0;
+  -webkit-box-shadow: inset 0px 0px 15px 0px rgba(114,131,146,0.1);
+  -moz-box-shadow: inset 0px 0px 15px 0px rgba(114,131,146,0.1);
+  box-shadow: inset 0px 0px 15px 0px rgba(114,131,146,0.1);
+  color: #728392;
+}
+
+#sign-up form input::placeholder {
+  color: #728392;
+}
+
+#sign-up button {
+  width: 100%;
+  padding: 15px;
+  background: #174272;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.auth-switcher {
+  margin-top: 10px;
+  text-align: center;
+}
