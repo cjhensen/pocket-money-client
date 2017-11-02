@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import {IndexView} from './IndexView';
+import {IndexView} from './indexView';
 
 describe('<IndexView />', () => {
   it('renders without crashing', () => {
