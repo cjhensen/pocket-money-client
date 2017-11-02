@@ -1,0 +1,43 @@
+#nav-container {
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #c8d4e0
+}
+#nav-container ul {
+  list-style: none;
+  padding: 0;
+}
+#nav-container ul li {
+  display: inline-block;
+  width: 20%;
+  // height: 35px;
+}
+#nav-container .nav-text {
+  font-size: 12px;
+  text-align: center;
+  color: #83929f;
+}
+.nav-icon {
+  background: url('../../images/nav_icons.png');
+  height: 26px;
+  width: 32px;
+  margin: 5px auto 0 auto;
+  background-repeat: no-repeat;
+  background-size: 32px 130px;
+}
+.nav-icon.overview {
+  background-position: 0px 0px;
+}
+.nav-icon.transactions {
+  background-position: 0px -26px;
+}
+.nav-icon.categories {
+  background-position: 0px -52px;
+}
+.nav-icon.insights {
+  background-position: 0px -78px;
+}
+.nav-icon.settings {
+  background-position: 0px -104px;
+}

@@ -1,7 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import IndexView from '../indexView/indexView'
+import IndexView from '../indexView/indexView';
+import NavBar from '../navBar/navBar';
+
+import './app.css';
 
 export class App extends React.Component {
 
@@ -14,7 +17,7 @@ export class App extends React.Component {
   // show component view based on state
   showView() {
     if(this.props.currentView === 'overview' && this.props.isLoggedIn === true) {
-      return <div>overview component</div>
+      return <div className="overviewComponent">overview component</div>
     }
     if(this.props.currentView === 'transactions' && this.props.isLoggedIn === true) {
       return <div>transactions component</div>
@@ -31,8 +34,15 @@ export class App extends React.Component {
   }
 
   showNav() {
+    const navElements = [
+      "overview",
+      "transactions",
+      "categories",
+      "insights",
+      "settings"
+    ];
     if(this.props.isLoggedIn) {
-      return <div>nav component</div>;
+      return <NavBar navElements={navElements} />;
     }
   }
 

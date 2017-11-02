@@ -1,0 +1,9 @@
+.app {
+  background: #eaf3f9;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.overviewComponent {
+  flex: 1;
+}
