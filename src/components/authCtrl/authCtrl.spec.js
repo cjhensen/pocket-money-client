@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import AuthCtrl from './AuthCtrl';
+import AuthCtrl from './authCtrl';
 
 describe('<AuthCtrl />', () => {
   it('renders without crashing', () => {
