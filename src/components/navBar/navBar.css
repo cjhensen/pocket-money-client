@@ -11,7 +11,6 @@
 #nav-container ul li {
   display: inline-block;
   width: 20%;
-  text-transform: capitalize;
 }
 #nav-container .nav-item.active {
   background: #f7f7f7;
@@ -29,6 +28,7 @@
   font-size: 12px;
   text-align: center;
   color: #83929f;
+  text-transform: capitalize;
 }
 .nav-icon {
   background: url('../../images/nav_icons.png');
