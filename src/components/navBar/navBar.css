@@ -13,13 +13,17 @@
   width: 20%;
   text-transform: capitalize;
 }
-#nav-container a {
-  text-decoration: none;
-  display: flow-root;
-}
-.nav-item.active {
+#nav-container .nav-item.active {
   background: #f7f7f7;
   font-weight: bold;
+}
+#nav-container .nav-item {
+  background: #fff; 
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 0;
 }
 #nav-container .nav-text {
   font-size: 12px;
