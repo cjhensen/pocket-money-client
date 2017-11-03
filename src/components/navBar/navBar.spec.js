@@ -31,4 +31,24 @@ describe('<NavBar />', () => {
     expect(wrapper.find('.nav-icon .settings').length).toBe(1);
     expect(wrapper.find('.nav-text').length).toBe(5);
   });
+
+  it('should fire the changeView callback when a link is clicked', () => {
+    const callback = jest.fn();
+    const wrapper = mount(<NavBar navElements={navElements} currentView={'overview'} changeView={callback} />);
+    wrapper.find('a.active').simulate('click');
+    expect(callback).toHaveBeenCalledWith('overview');
+  });
+
+  xit('should change the active class to the active views corresponding nav element', () => {
+    const navElements = [
+      "overview",
+      "transactions"
+    ];
+    const callback = jest.fn();
+    const wrapper = mount(<NavBar navElements={navElements} currentView={'overview'} changView={callback} />);
+    expect(wrapper.find('a.active .nav-text').text()).toEqual('overview');
+    wrapper.find('a').at(1).simulate('click');
+    expect(callback).toHaveBeenCalledWith('overview');
+    expect(wrapper.find('a.active .nav-text').text()).toEqual('transactions');
+  });
 });

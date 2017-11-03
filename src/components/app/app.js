@@ -6,6 +6,8 @@ import NavBar from '../navBar/navBar';
 
 import './app.css';
 
+import {changeView} from '../../actions'
+
 export class App extends React.Component {
 
   showIndex() {
@@ -33,6 +35,8 @@ export class App extends React.Component {
     }
   }
 
+
+
   showNav() {
     const navElements = [
       "overview",
@@ -42,9 +46,18 @@ export class App extends React.Component {
       "settings"
     ];
     if(this.props.isLoggedIn) {
-      return <NavBar navElements={navElements} />;
+      return <NavBar 
+                navElements={navElements} 
+                currentView={this.props.currentView} 
+                changeView={view => this.changeView(view)} />;
     }
   }
+
+  changeView(view) {
+    this.props.dispatch(changeView(view));
+  }
+
+
 
   render() {
     return (

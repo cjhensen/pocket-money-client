@@ -11,7 +11,15 @@
 #nav-container ul li {
   display: inline-block;
   width: 20%;
-  // height: 35px;
+  text-transform: capitalize;
+}
+#nav-container a {
+  text-decoration: none;
+  display: flow-root;
+}
+.nav-item.active {
+  background: #f7f7f7;
+  font-weight: bold;
 }
 #nav-container .nav-text {
   font-size: 12px;
