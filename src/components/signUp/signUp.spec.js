@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import SignUp from './signUp';
+import SignUp from './';
 
 describe('<SignUp />', () => {
   it('renders without crashing', () => {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import store from './store';
 
-import App from './components/app/app';
+import AppContainer from './components/app';
 
 // css reset, bootstrap grid, and base styles
 import './vendor/normalize.css';
@@ -13,7 +13,7 @@ import './index.css';
 // registerServiceWorker();
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 );
