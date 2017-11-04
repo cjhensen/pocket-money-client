@@ -2,8 +2,8 @@ import {CHANGE_VIEW} from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
-  currentView: 'overview',
-  isLoggedIn: true
+  currentView: 'index',
+  isLoggedIn: false
 };
 
 export const pmReducer = (state = initialState, action) => {

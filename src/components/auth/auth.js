@@ -1,29 +1,14 @@
 import React from 'react';
 import {Col} from 'react-bootstrap';
 
-// Assets
 import logo from '../../images/logo.png';
-import './authCtrl.css';
+import './auth.css';
 
-// Components
-import SignUp from '../signUp/signUp';
-import LogIn from '../logIn/logIn';
+export default function Auth(props) {
 
-
-export default function AuthCtrl(props) {
-
-  const authView = props.authView;
-  let authComponent = null;
+  const authComponent = props.authComponent;
   
-  if(authView === "signup") {
-    authComponent = <SignUp />
-  }
-  if(authView === "login") {
-    authComponent = <LogIn /> 
-  }
-
   return (
-
     <div className="auth-container">
       <Col xs={10} sm={6} md={4} xsOffset={1} smOffset={3} mdOffset={4}>
         <div className="logo">

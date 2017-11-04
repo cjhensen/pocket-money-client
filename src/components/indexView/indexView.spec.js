@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import {IndexView} from './indexView';
+import IndexViewContainer from './';
 
-describe('<IndexView />', () => {
+describe('<IndexViewContainer />', () => {
   it('renders without crashing', () => {
-    shallow(<IndexView />);
+    shallow(<IndexViewContainer currentView={'index'} />);
   });
 });
