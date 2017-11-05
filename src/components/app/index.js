@@ -7,6 +7,7 @@ import {changeView} from '../../actions';
 // Components
 import App from './app';
 import IndexViewContainer from '../indexView';
+import CategoriesContainer from '../categories';
 import NavBar from '../navBar';
 
 export class AppContainer extends React.Component {
@@ -29,7 +30,7 @@ export class AppContainer extends React.Component {
         case 'transactions':
           return <div>transactions</div>;
         case 'categories':
-          return <div>categories</div>;
+          return <CategoriesContainer />;
         case 'insights':
           return <div>insights</div>;
         case 'settings':

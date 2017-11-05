@@ -1,0 +1,67 @@
+#categories {
+  flex: 1;
+}
+
+.category {
+  background: #fff;
+  display: flow-root;
+  border-bottom: 1px solid #aaaaaa;
+}
+.category ul {
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 40px;
+}
+
+.category-label {
+  color: #174272;
+  flex: 1 0 15%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.category-meter {
+  flex: 1 0 auto;
+}
+.category-remaining,
+.category-spent,
+.category-total {
+  background: #aabdd0;
+  border-radius: 25px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex: 1 0 10px;
+  text-align: center;
+  margin-left: 10px;
+  max-width: 100px;
+}
+
+.remove {
+  display: none;
+}
+
+.category-controls {
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+}
+.btn-add,
+.btn-edit {
+  background: #23d2a7;
+  color: #fff;
+}
