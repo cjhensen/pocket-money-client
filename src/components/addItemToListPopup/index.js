@@ -1,18 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {showAddPopup} from '../../actions';
+import {showAddPopup, addNewCategory} from '../../actions';
 
 import AddItemToListPopup from './addItemToListPopup';
 
 
 export class AddItemToListContainer extends React.Component {
-
+  
+  // hide popup  
   handleCloseBtnClicked() {
     console.log('handleCloseBtnClicked');
     this.hideAddItemPopup();
   }
 
+  // prevent default form submit (might change for endpoint usage)
+  // doSomethingWithFormData will update state
+  // getFormData gets values from the forms and returns an object with the data, 
+    // which is used to create a new category, transaction, income, etc.
+  // clearForm clears all form elements that have values
+  // hide the item popup after submit
   handleAddFormSubmit(e) {
     console.log('handleAddFormSubmit');
     // might need to remove e.preventDefault() when dealing with API endpoints
@@ -22,6 +29,8 @@ export class AddItemToListContainer extends React.Component {
     this.hideAddItemPopup();
   }
 
+  // get the data out of the form for the elements and return an object 
+  // for the item type (transaction, income, category, etc.)
   getFormData(e) {
     console.log('getFormData');
     
@@ -53,11 +62,14 @@ export class AddItemToListContainer extends React.Component {
     return formData;
   }
 
+  // update the state with the form data
   doSomethingWithFormData(formData) {
     console.log('doSomethingWithFormData');
     console.log('formData', formData);
+    this.props.dispatch(addNewCategory(formData.categoryName, formData.totalBudget));
   }
 
+  // clears all elements in the form that have values
   clearForm(e) {
     const elements = e.target.elements;
 
@@ -66,6 +78,7 @@ export class AddItemToListContainer extends React.Component {
     }
   }
 
+  // update state which hides the popup
   hideAddItemPopup() {
     console.log('hideAddItemPopup');
     if(this.props.showAddPopup === true) {
@@ -73,6 +86,10 @@ export class AddItemToListContainer extends React.Component {
     }
   }
 
+  // uses fields arrays containing objects which represent the fields that should
+  // be in the for. Based on the prop formType passed in on the element where
+  // the element is used. Will determine what fields to show and what api url to
+  // submit the data to if e.preventDefault is turned off
   buildForm(formType) {
     if(this.props.formType === "categories") {
       const fields = [

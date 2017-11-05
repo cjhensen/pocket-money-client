@@ -17,8 +17,10 @@ export default function Categories(props) {
           <li className="category-meter">[######]</li>
           <li className="category-remaining">__</li>
           <li className="category-spent">__</li>
-          <li className="category-total">{category.totalBudget}</li>
-          <li className="remove">x</li>
+          <li className="category-total">{"$" + category.totalBudget}</li>
+          <li 
+            className={'remove ' + (props.showEditMode === true ? 'show' : "")}
+            onClick={() => props.handleRemoveBtnClicked()}>x</li>
         </ul>
       </Col>
     </div>
@@ -39,7 +41,12 @@ export default function Categories(props) {
             onClick={(e) => props.handleAddBtnClicked(e)}>Add Category</button>
           </Col>
           <Col xs={6}>
-            <button className="btn btn-edit">Edit</button>
+            <button 
+              className={'btn btn-edit ' + (props.showEditMode === true ? 'hide' : "")}
+              onClick={(e) => props.handleEditBtnClicked(e)}>Edit</button>
+            <button 
+              className={'btn btn-done ' + (props.showEditMode === true ? 'show' : "")}
+              onClick={(e) => props.handleDoneBtnClicked(e)}>Done</button>
           </Col>
         </Col>
       </div>

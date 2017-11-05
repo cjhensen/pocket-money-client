@@ -1,11 +1,12 @@
-import {CHANGE_VIEW, SHOW_ADD_POPUP} from '../actions';
+import {CHANGE_VIEW, SHOW_ADD_POPUP, ADD_NEW_CATEGORY, SHOW_EDIT_MODE} from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
   currentView: 'categories',
   isLoggedIn: true,
   categoriesView: {
-    showAddPopup: false
+    showAddPopup: false,
+    showEditMode: false
   },
   userData: {
     categories: [
@@ -42,6 +43,25 @@ export const pmReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       categoriesView: {
         showAddPopup: action.showAddPopup
+      }
+    });
+  }
+
+  if(action.type === SHOW_EDIT_MODE) {
+    console.log('show editmode');
+    return Object.assign({}, state, {
+      categoriesView: {
+        showEditMode: action.showEditMode
+      }
+    })
+  }
+
+  if(action.type  === ADD_NEW_CATEGORY) {
+    console.log('add new category');
+    return Object.assign({}, state, {
+      userData: {
+        categories: [
+        ...state.userData.categories, action.category]
       }
     });
   }

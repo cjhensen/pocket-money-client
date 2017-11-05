@@ -44,9 +44,11 @@
   margin-left: 10px;
   max-width: 100px;
 }
-
 .remove {
   display: none;
+}
+.show-remove {
+  display: inline;;
 }
 
 .category-controls {
@@ -61,7 +63,17 @@
   border-radius: 10px;
 }
 .btn-add,
-.btn-edit {
+.btn-edit,
+.btn-done {
   background: #23d2a7;
   color: #fff;
+}
+.btn-done {
+  display: none;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: inline;
 }

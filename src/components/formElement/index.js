@@ -2,9 +2,16 @@ import React from 'react';
 
 export default function FormElement(props) {
 
+  /*****************************************
+  NOTE: GitHub Issue #41
+  buildElement() is called three times: once on categories load,
+  once on add button clicked, and once on submit/close
+  Why? Maybe render only if popup is shown, not by default.
+  Must have something to do with css properties and showing/hiding.
+  *****************************************/
   const elementProperties = props.elementProperties;
 
-
+  // builds option elements for a select element based on array of values
   function buildSelectOptionValues() {
     const values = elementProperties.values;
     const options = values.map((value, index) => 
@@ -14,6 +21,7 @@ export default function FormElement(props) {
     return options;
   }
 
+  // build a form element based on an object passed in with element properties
   function buildElement() {
     console.log('buildElement');
 
