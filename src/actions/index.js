@@ -24,3 +24,15 @@ export const addNewCategory = (categoryName, totalBudget) => ({
     totalBudget
   }
 });
+
+export const SET_SELECTED_ITEM = 'SET_SELECTED_ITEM';
+export const setSelectedItem = (categoryItem) => ({
+  type: SET_SELECTED_ITEM,
+  categoryItem
+});
+
+export const DELETE_SELECTED_ITEM = 'DELETE_SELECTED_ITEM';
+export const deleteSelectedItem = (categoryItem) => ({
+  type: DELETE_SELECTED_ITEM,
+  categoryItem
+});

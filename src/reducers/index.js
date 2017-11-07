@@ -1,4 +1,11 @@
-import {CHANGE_VIEW, SHOW_ADD_POPUP, ADD_NEW_CATEGORY, SHOW_EDIT_MODE} from '../actions';
+import {
+  CHANGE_VIEW, 
+  SHOW_ADD_POPUP, 
+  ADD_NEW_CATEGORY, 
+  SHOW_EDIT_MODE, 
+  SET_SELECTED_ITEM,
+  DELETE_SELECTED_ITEM
+} from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
@@ -42,6 +49,7 @@ export const pmReducer = (state = initialState, action) => {
     console.log('show add popup working');
     return Object.assign({}, state, {
       categoriesView: {
+        ...state.categoriesView,
         showAddPopup: action.showAddPopup
       }
     });
@@ -51,6 +59,7 @@ export const pmReducer = (state = initialState, action) => {
     console.log('show editmode');
     return Object.assign({}, state, {
       categoriesView: {
+        ...state.categoriesView,
         showEditMode: action.showEditMode
       }
     })
@@ -62,6 +71,27 @@ export const pmReducer = (state = initialState, action) => {
       userData: {
         categories: [
         ...state.userData.categories, action.category]
+      }
+    });
+  }
+
+  if(action.type === SET_SELECTED_ITEM) {
+    console.log('set selected item');
+    console.log('set action category item', action.categoryItem);
+    return Object.assign({}, state, {
+      categoriesView: {
+        ...state.categoriesView,
+        selectedItem: action.categoryItem
+      }
+    });
+  }
+
+  if(action.type === DELETE_SELECTED_ITEM) {
+    console.log('delete selected item');
+    console.log('delete action category item', action.categoryItem);
+    return Object.assign({}, state, {
+      userData: {
+        categories: state.userData.categories.filter(category => category.categoryName !== action.categoryItem.categoryName)
       }
     });
   }

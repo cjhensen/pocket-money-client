@@ -7,7 +7,7 @@ import AddItemToListPopup from './addItemToListPopup';
 
 
 export class AddItemToListContainer extends React.Component {
-  
+
   // hide popup  
   handleCloseBtnClicked() {
     console.log('handleCloseBtnClicked');
@@ -171,6 +171,7 @@ export class AddItemToListContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  showAddPopup: state.categoriesView.showAddPopup
+  showAddPopup: state.categoriesView.showAddPopup,
+  itemBeingEdited: state.categoriesView.itemBeingEdited
 });
 export default connect(mapStateToProps)(AddItemToListContainer);

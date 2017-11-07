@@ -10,7 +10,9 @@ import './categories.css';
 export default function Categories(props) {
 
   const categories = props.categories.map((category, index) => 
-    <div key={index} className="category">
+    <div 
+      key={index} 
+      className="category">
       <Col xs={12}>
         <ul>
           <li className="category-label">{category.categoryName}</li>
@@ -20,14 +22,18 @@ export default function Categories(props) {
           <li className="category-total">{"$" + category.totalBudget}</li>
           <li 
             className={'remove ' + (props.showEditMode === true ? 'show' : "")}
-            onClick={() => props.handleRemoveBtnClicked()}>x</li>
+            onClick={(e) => props.handleRemoveBtnClicked(e)}>x</li>
+          <li 
+            className={'item-edit ' + (props.showEditMode === true ? 'show' : "")}
+            onClick={(e) => props.handleItemEditClicked(e)}>@</li>
         </ul>
       </Col>
     </div>
   );
   return (
     <div id="categories">
-      <AddItemToListPopupContainer formType={"categories"} />
+      <AddItemToListPopupContainer 
+        formType={"categories"} />
 
       <div className="category-items">
         {categories}
