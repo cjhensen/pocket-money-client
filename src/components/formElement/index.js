@@ -24,6 +24,7 @@ export default function FormElement(props) {
   // build a form element based on an object passed in with element properties
   function buildElement() {
     console.log('buildElement');
+    console.log('editingValue', elementProperties.editingValue);
 
     if(elementProperties.element === "input") {
       return (
@@ -33,8 +34,8 @@ export default function FormElement(props) {
             step={elementProperties.type === "number" ? "0.01" : null}
             name={elementProperties.name}
             id={elementProperties.name}
-            placeholder={elementProperties.placeholder}
-            required={elementProperties.type === "checkbox" ? null : "required"}/>
+            placeholder={elementProperties.editingValue !== "" ? elementProperties.editingValue : elementProperties.placeholder}
+            required={elementProperties.type === "checkbox" ? null : "required"} />
         </label>
       );
     }

@@ -29,7 +29,7 @@ export class CategoriesContainer extends React.Component {
   handleRemoveBtnClicked(e) {
     console.log('handleRemoveBtnClicked');
     const selectedItem = this.getCategoryValues(e.currentTarget.closest('.category'));
-    
+
     this.props.dispatch(deleteSelectedItem(selectedItem));
   }
 
@@ -83,7 +83,6 @@ export class CategoriesContainer extends React.Component {
 const mapStateToProps = state => ({
   showAddPopup: state.categoriesView.showAddPopup,
   categories: state.userData.categories,
-  showEditMode: state.categoriesView.showEditMode,
-  selectedItem: state.categoriesView.selectedItem
+  showEditMode: state.categoriesView.showEditMode
 });
 export default connect(mapStateToProps)(CategoriesContainer);

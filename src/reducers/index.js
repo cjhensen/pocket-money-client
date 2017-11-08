@@ -77,7 +77,6 @@ export const pmReducer = (state = initialState, action) => {
 
   if(action.type === SET_SELECTED_ITEM) {
     console.log('set selected item');
-    console.log('set action category item', action.categoryItem);
     return Object.assign({}, state, {
       categoriesView: {
         ...state.categoriesView,
@@ -88,7 +87,6 @@ export const pmReducer = (state = initialState, action) => {
 
   if(action.type === DELETE_SELECTED_ITEM) {
     console.log('delete selected item');
-    console.log('delete action category item', action.categoryItem);
     return Object.assign({}, state, {
       userData: {
         categories: state.userData.categories.filter(category => category.categoryName !== action.categoryItem.categoryName)

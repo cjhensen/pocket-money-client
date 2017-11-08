@@ -97,13 +97,15 @@ export class AddItemToListContainer extends React.Component {
           element: "input",
           name: "categoryName",
           type: "text",
-          placeholder: "Category"
+          placeholder: "Category",
+          editingValue: this.props.selectedItem ? this.props.selectedItem.categoryName : ""
         },
         {
           element: "input",
           name: "totalBudget",
           type: "number",
-          placeholder: "Total Budget"
+          placeholder: "Total Budget",
+          editingValue: this.props.selectedItem ? this.props.selectedItem.totalBudget : ""
         }
       ];
 
@@ -172,6 +174,7 @@ export class AddItemToListContainer extends React.Component {
 
 const mapStateToProps = state => ({
   showAddPopup: state.categoriesView.showAddPopup,
-  itemBeingEdited: state.categoriesView.itemBeingEdited
+  itemBeingEdited: state.categoriesView.itemBeingEdited,
+  selectedItem: state.categoriesView.selectedItem
 });
 export default connect(mapStateToProps)(AddItemToListContainer);

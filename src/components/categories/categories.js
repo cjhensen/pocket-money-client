@@ -16,7 +16,7 @@ export default function Categories(props) {
       <Col xs={12}>
         <ul>
           <li className="category-label">{category.categoryName}</li>
-          <li className="category-meter">[######]</li>
+           <li className="category-meter">[######]</li>
           <li className="category-remaining">__</li>
           <li className="category-spent">__</li>
           <li className="category-total">{"$" + category.totalBudget}</li>
