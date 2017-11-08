@@ -27,15 +27,15 @@ export class AppContainer extends React.Component {
     if(this.props.isLoggedIn === true) {
       switch(this.props.currentView) {
         case 'overview':
-          return <div className="overviewComponent">overviewComponent</div>;
+          return <div className="view-wrap">overviewComponent</div>;
         case 'transactions':
           return <TransactionsContainer />;
         case 'categories':
           return <CategoriesContainer />;
         case 'insights':
-          return <div>insights</div>;
+          return <div className="view-wrap">insights</div>;
         case 'settings':
-          return <div>settings</div>;
+          return <div className="view-wrap">settings</div>;
         default:
           return <div>That page does not exist</div>;
       }

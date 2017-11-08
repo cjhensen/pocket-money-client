@@ -3,24 +3,13 @@ import {connect} from 'react-redux';
 import {deleteSelectedItem} from '../../actions';
 
 // Components
-import ListItemFactory from './listItemFactory';
 import CategoryItem from './listItems/categoryItem';
 import TransactionItem from './listItems/transactionItem';
 
+// Assets
+import './listItem.css';
+
 export class ListItemContainer extends React.Component {
-  // const listItemType = props.listItemType;
-  // const listItem = props.listItem;
-
-
-  assignEventHandlers() {
-    const itemEventHandlers = {
-      handleItemRemoveBtnClicked: this.handleItemRemoveBtnClicked,
-      handleItemEditBtnClicked: this.handleItemEditBtnClicked
-    };
-    
-    return itemEventHandlers;
-  }
-
 
   handleItemRemoveBtnClicked(e) {
     console.log('handleItemRemoveBtnClicked');
@@ -41,10 +30,8 @@ export class ListItemContainer extends React.Component {
     return {'categoryName': categoryLabel, 'totalBudget': categoryTotal};
   }
 
-  // const builtListItem = ListItemFactory.build(props.listItemType, props.listItem, this.assignEventHandlers);
 
   render() {
-    // return ListItemFactory.build(this.props.listItemType, this.props.listItem, this.assignEventHandlers());
 
     switch(this.props.listItemType) {
       case 'category':

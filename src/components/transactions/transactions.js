@@ -5,6 +5,7 @@ import {Col} from 'react-bootstrap';
 
 // Components
 import ListItemContainer from '../listItem';
+import ListControlsContainer from '../listControls';
 
 export default function Transactions(props) {
   const listItems = props.listItems;
@@ -17,21 +18,12 @@ export default function Transactions(props) {
   );
 
   return (
-    <div id="transactions">
-      <div className="transaction-items">
+    <div id="transactions" className="view-wrap">
+      <div className="list-items">
         {listElements}
       </div>
 
-      <div className="category-controls">
-        <Col xs={12}>
-          <Col xs={6}>
-            <button className="btn btn-edit">Add Transaction</button>
-          </Col>
-          <Col xs={6}>
-            <button className="btn btn-edit">Edit</button>
-          </Col>
-        </Col>
-      </div>
+      <ListControlsContainer btnText={'Add Transaction'} />
     </div>
   );
 }

@@ -5,18 +5,16 @@ import {Col} from 'react-bootstrap';
 
 export default function CategoryItem(props) {
   const listItem = props.listItem;
-  // const itemEventHandlers = props.itemEventHandlers;
-
 
   return (
-    <div className="category">
+    <div className="list-item">
       <Col xs={12}>
         <ul>
-          <li className="category-label">{listItem.categoryName}</li>
-          <li className="category-meter">[#####]</li>
-          <li className="category-remaining">__</li>
-          <li className="category-spent">__</li>
-          <li className="category-total">{listItem.totalBudget}</li>
+          <li className="item-label">{listItem.categoryName}</li>
+          <li className="item-meter">[#####]</li>
+          <li className="item-pill">__</li>
+          <li className="item-pill">__</li>
+          <li className="item-pill">{listItem.totalBudget}</li>
           <li onClick={(e) => props.handleItemRemoveBtnClicked(e)} className="item-remove">x</li>
           <li onClick={(e) => props.handleItemRemoveBtnClicked(e)} className="item-edit">[edit]</li>
         </ul>

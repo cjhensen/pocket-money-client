@@ -1,13 +1,10 @@
-#categories {
-  flex: 1;
-}
-
-.category {
+.list-item {
   background: #fff;
   display: flow-root;
   border-bottom: 1px solid #aaaaaa;
 }
-.category ul {
+
+.list-item ul {
   list-style: none;
   padding: 0;
 
@@ -20,19 +17,15 @@
   height: 40px;
 }
 
-.category-label {
+.item-label {
   color: #174272;
   flex: 1 0 15%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.category-meter {
-  flex: 1 0 auto;
-}
-.category-remaining,
-.category-spent,
-.category-total {
+
+.item-pill {
   background: #aabdd0;
   border-radius: 25px;
   padding-top: 2px;
@@ -44,37 +37,7 @@
   margin-left: 10px;
   max-width: 100px;
 }
-.remove,
-.item-edit {
-  display: none;
-}
-.show-remove {
-  display: inline;;
-}
 
-.category-controls {
-  position: absolute;
-  bottom: 70px;
-  width: 100%;
-}
-
-.btn {
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-}
-.btn-add,
-.btn-edit,
-.btn-done {
-  background: #23d2a7;
-  color: #fff;
-}
-.btn-done {
-  display: none;
-}
-.hide {
-  display: none;
-}
-.show {
-  display: inline;
+.item-meter {
+  flex: 1 0 auto;
 }

@@ -2,10 +2,10 @@ import React from 'react';
 
 // Assets
 import {Col} from 'react-bootstrap';
-import './categories.css';
 
 // Components
 import ListItemContainer from '../listItem';
+import ListControlsContainer from '../listControls';
 
 export default function Categories(props) {
   const listItems = props.listItems;
@@ -18,21 +18,12 @@ export default function Categories(props) {
   );
 
   return (
-    <div id="categories">
-      <div className="category-items">
+    <div id="categories" className="view-wrap">
+      <div className="list-items">
         {listElements}
       </div>
 
-      <div className="category-controls">
-        <Col xs={12}>
-          <Col xs={6}>
-            <button className="btn btn-edit">Add Category</button>
-          </Col>
-          <Col xs={6}>
-            <button className="btn btn-edit">Edit</button>
-          </Col>
-        </Col>
-      </div>
+      <ListControlsContainer btnText={'Add Category'} />
     </div>
   );
 }

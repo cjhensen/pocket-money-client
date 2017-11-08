@@ -13,6 +13,6 @@ html {
   padding: 0 !important;
 }
 
-.wrapper {
-  // padding-top: 60px;
+.view-wrap {
+  flex: 1;
 }
