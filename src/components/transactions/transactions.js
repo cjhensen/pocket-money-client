@@ -2,31 +2,30 @@ import React from 'react';
 
 // Assets
 import {Col} from 'react-bootstrap';
-import './categories.css';
 
 // Components
 import ListItemContainer from '../listItem';
 
-export default function Categories(props) {
+export default function Transactions(props) {
   const listItems = props.listItems;
 
   const listElements = listItems.map((item, index) => 
-    <ListItemContainer 
-      listItemType={'category'} 
+    <ListItemContainer
+      listItemType={'transaction'}
       listItem={item}
       key={index} />
   );
 
   return (
-    <div id="categories">
-      <div className="category-items">
+    <div id="transactions">
+      <div className="transaction-items">
         {listElements}
       </div>
 
       <div className="category-controls">
         <Col xs={12}>
           <Col xs={6}>
-            <button className="btn btn-edit">Add Category</button>
+            <button className="btn btn-edit">Add Transaction</button>
           </Col>
           <Col xs={6}>
             <button className="btn btn-edit">Edit</button>

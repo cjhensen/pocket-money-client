@@ -33,7 +33,28 @@ const initialState = {
         categoryName: "Skiing",
         totalBudget: "300"
       }
-    ]
+    ],
+    transactions: [
+      {
+        transactionName: "Cabo fresh",
+        category: "Food",
+        moneySpent: 14.52,
+        transactionRecurring: false
+      },
+      {
+        transactionName: "Domo sushi",
+        category: "Food",
+        moneySpent: 30.00,
+        transactionRecurring: false
+      },
+      {
+        transactionName: "Movies",
+        category: "Entertainment",
+        moneySpent: 16.00,
+        transactionRecurring: false
+      }
+    ],
+    income: []
   }
 };
 
