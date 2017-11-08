@@ -4,6 +4,8 @@ import {deleteSelectedItem} from '../../actions';
 
 // Components
 import ListItemFactory from './listItemFactory';
+import CategoryItem from './listItems/categoryItem';
+import TransactionItem from './listItems/transactionItem';
 
 export class ListItemContainer extends React.Component {
   // const listItemType = props.listItemType;
@@ -42,7 +44,24 @@ export class ListItemContainer extends React.Component {
   // const builtListItem = ListItemFactory.build(props.listItemType, props.listItem, this.assignEventHandlers);
 
   render() {
-    return ListItemFactory.build(this.props.listItemType, this.props.listItem, this.assignEventHandlers());
+    // return ListItemFactory.build(this.props.listItemType, this.props.listItem, this.assignEventHandlers());
+
+    switch(this.props.listItemType) {
+      case 'category':
+        return <CategoryItem 
+                  listItem={this.props.listItem} 
+                  handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
+                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)} />;
+      case 'transaction':
+        return <TransactionItem 
+                  listItem={this.props.listItem} 
+                  handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
+                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)} />;
+      case 'income':
+        return <div>income item component</div>;
+      default:
+        return undefined;
+    }
   }
 }
 

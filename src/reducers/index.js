@@ -110,6 +110,7 @@ export const pmReducer = (state = initialState, action) => {
     console.log('delete selected item');
     return Object.assign({}, state, {
       userData: {
+        ...state.userData,
         categories: state.userData.categories.filter(category => category.categoryName !== action.categoryItem.categoryName)
       }
     });
