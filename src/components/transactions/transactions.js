@@ -6,6 +6,7 @@ import {Col} from 'react-bootstrap';
 // Components
 import ListItemContainer from '../listItem';
 import ListControlsContainer from '../listControls';
+import AddListItemPopupContainer from '../addListItemPopup';
 
 export default function Transactions(props) {
   const listItems = props.listItems;
@@ -19,6 +20,10 @@ export default function Transactions(props) {
 
   return (
     <div id="transactions" className="view-wrap">
+
+      <AddListItemPopupContainer 
+          listItemType={'transaction'} />
+
       <div className="list-items">
         {listElements}
       </div>

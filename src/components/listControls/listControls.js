@@ -13,7 +13,9 @@ export default function ListControls(props) {
     <div className="list-controls">
       <Col xs={12}>
         <Col xs={6}>
-          <button className="btn btn-add">{btnText}</button>
+          <button 
+            className="btn btn-add"
+            onClick={(e) => props.handleAddBtnClicked(e)}>{btnText}</button>
         </Col>
         <Col xs={6}>
           <button className="btn btn-edit">Edit</button>

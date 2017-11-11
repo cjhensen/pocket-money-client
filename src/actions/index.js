@@ -4,10 +4,10 @@ export const changeView = (view) => ({
   view
 });
 
-export const SHOW_ADD_POPUP = 'SHOW_ADD_POPUP';
-export const showAddPopup = (showAddPopup) => ({
-  type: SHOW_ADD_POPUP,
-  showAddPopup
+export const TOGGLE_ADD_POPUP = 'TOGGLE_ADD_POPUP';
+export const toggleAddPopup = (isDisplayed) => ({
+  type: TOGGLE_ADD_POPUP,
+  isDisplayed
 });
 
 export const SHOW_EDIT_MODE = 'SHOW_EDIT_MODE';

@@ -6,7 +6,8 @@ import Transactions from './transactions';
 export class TransactionsContainer extends React.Component {
   render() {
     return (
-      <Transactions listItems={this.props.transactions} />
+      <Transactions 
+        listItems={this.props.transactions} />
     );
   }
 }

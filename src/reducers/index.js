@@ -1,6 +1,6 @@
 import {
   CHANGE_VIEW, 
-  SHOW_ADD_POPUP, 
+  TOGGLE_ADD_POPUP, 
   ADD_NEW_CATEGORY, 
   SHOW_EDIT_MODE, 
   SET_SELECTED_ITEM,
@@ -14,6 +14,9 @@ const initialState = {
   categoriesView: {
     showAddPopup: false,
     showEditMode: false
+  },
+  addListItemPopup: {
+    isDisplayed: true
   },
   userData: {
     categories: [
@@ -66,12 +69,11 @@ export const pmReducer = (state = initialState, action) => {
     });
   }
 
-  if(action.type === SHOW_ADD_POPUP) {
+  if(action.type === TOGGLE_ADD_POPUP) {
     console.log('show add popup working');
     return Object.assign({}, state, {
-      categoriesView: {
-        ...state.categoriesView,
-        showAddPopup: action.showAddPopup
+      addListItemPopup: {
+        isDisplayed: action.isDisplayed
       }
     });
   }

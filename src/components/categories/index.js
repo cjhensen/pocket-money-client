@@ -6,7 +6,8 @@ import Categories from './categories';
 export class CategoriesContainer extends React.Component {
   render() {
     return (
-      <Categories listItems={this.props.categories} />
+      <Categories 
+        listItems={this.props.categories} />
     );
   }
 }
