@@ -5,6 +5,7 @@ import {deleteSelectedItem} from '../../actions';
 // Components
 import CategoryItem from './listItems/categoryItem';
 import TransactionItem from './listItems/transactionItem';
+import IncomeItem from './listItems/incomeItem';
 
 // Assets
 import './listItem.css';
@@ -57,7 +58,10 @@ export class ListItemContainer extends React.Component {
                   handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
                   handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)} />;
       case 'income':
-        return <div>income item component</div>;
+        return <IncomeItem 
+                  listItem={this.props.listItem} 
+                  handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
+                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)} />;
       default:
         return undefined;
     }

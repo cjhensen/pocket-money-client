@@ -5,16 +5,16 @@ import {
   SHOW_EDIT_MODE, 
   SET_SELECTED_ITEM,
   DELETE_SELECTED_ITEM,
-  ADD_NEW_ITEM_TO_LIST
+  ADD_NEW_ITEM_TO_LIST,
+  SET_ACTIVE_TAB
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
-  currentView: 'categories',
+  currentView: 'transactions',
   isLoggedIn: true,
-  categoriesView: {
-    showAddPopup: false,
-    showEditMode: false
+  transactionsView: {
+    activeTab: 'income'
   },
   addListItemPopup: {
     isDisplayed: false
@@ -65,7 +65,28 @@ const initialState = {
         id: 87
       }
     ],
-    income: []
+    income: [
+      { 
+        incomeName: "Staples wk1",
+        incomeAmount: 280,
+        incomeRecurring: false
+      },
+      { 
+        incomeName: "Staples wk2",
+        incomeAmount: 280,
+        incomeRecurring: false
+      },
+      { 
+        incomeName: "Staples wk3",
+        incomeAmount: 280,
+        incomeRecurring: false
+      },
+      { 
+        incomeName: "Staples wk4",
+        incomeAmount: 280,
+        incomeRecurring: false
+      }
+    ]
   }
 };
 
@@ -127,6 +148,15 @@ export const pmReducer = (state = initialState, action) => {
         }
       });
     }
+  }
+
+  if(action.type === SET_ACTIVE_TAB) {
+    return Object.assign({}, state, {
+      transactionsView: {
+        ...state.transactionsView,
+        activeTab: action.tab
+      }
+    });
   }
 
   if(action.type === SET_SELECTED_ITEM) {

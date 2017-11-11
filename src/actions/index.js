@@ -32,6 +32,12 @@ export const addNewItemToList = (item, itemType) => ({
   itemType
 });
 
+export const SET_ACTIVE_TAB = 'SET_ACTIVE_TAB';
+export const setActiveTab = (tab) => ({
+  type: SET_ACTIVE_TAB,
+  tab
+});
+
 export const SET_SELECTED_ITEM = 'SET_SELECTED_ITEM';
 export const setSelectedItem = (categoryItem) => ({
   type: SET_SELECTED_ITEM,
