@@ -14,7 +14,7 @@ const initialState = {
   currentView: 'transactions',
   isLoggedIn: true,
   transactionsView: {
-    activeTab: 'income'
+    activeTab: 'transactions'
   },
   addListItemPopup: {
     isDisplayed: false

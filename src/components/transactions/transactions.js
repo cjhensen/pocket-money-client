@@ -9,6 +9,9 @@ import ListItemContainer from '../listItem';
 import ListControlsContainer from '../listControls';
 import AddListItemPopupContainer from '../addListItemPopup';
 
+/* ************************
+COULD REFACTOR THIS IN SOME WAY WITH THE TAB SWITCHING, not important though
+* ************************/
 export default function Transactions(props) {
   // const listItems = props.listItems;
   const transactionsListItems = props.transactionsListItems;
