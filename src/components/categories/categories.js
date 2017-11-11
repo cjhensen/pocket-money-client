@@ -11,7 +11,7 @@ import AddListItemPopupContainer from '../addListItemPopup';
 export default function Categories(props) {
   const listItems = props.listItems;
 
-  const listElements = listItems.map((item, index) => 
+  const listElements = listItems.map((item, index) =>
     <ListItemContainer 
       listItemType={'category'} 
       listItem={item}

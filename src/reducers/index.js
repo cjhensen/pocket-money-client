@@ -4,7 +4,8 @@ import {
   ADD_NEW_CATEGORY, 
   SHOW_EDIT_MODE, 
   SET_SELECTED_ITEM,
-  DELETE_SELECTED_ITEM
+  DELETE_SELECTED_ITEM,
+  ADD_NEW_ITEM_TO_LIST
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
@@ -22,19 +23,23 @@ const initialState = {
     categories: [
       {
         categoryName: "Food",
-        totalBudget: 800
+        totalBudget: 800,
+        id: 12
       },
       {
         categoryName: "Entertainment",
-        totalBudget: 200
+        totalBudget: 200,
+        id: 23
       },
       {
         categoryName: "School Loans",
-        totalBudget: 1200
+        totalBudget: 1200,
+        id: 34
       },
       {
         categoryName: "Skiing",
-        totalBudget: "300"
+        totalBudget: "300",
+        id: 45
       }
     ],
     transactions: [
@@ -42,19 +47,22 @@ const initialState = {
         transactionName: "Cabo fresh",
         category: "Food",
         moneySpent: 14.52,
-        transactionRecurring: false
+        transactionRecurring: false,
+        id: 789
       },
       {
         transactionName: "Domo sushi",
         category: "Food",
         moneySpent: 30.00,
-        transactionRecurring: false
+        transactionRecurring: false,
+        id: 98
       },
       {
         transactionName: "Movies",
         category: "Entertainment",
         moneySpent: 16.00,
-        transactionRecurring: false
+        transactionRecurring: false,
+        id: 87
       }
     ],
     income: []
@@ -63,14 +71,14 @@ const initialState = {
 
 export const pmReducer = (state = initialState, action) => {
   if(action.type === CHANGE_VIEW) {
-    console.log('change view action working');
+    console.log('change view');
     return Object.assign({}, state, {
       currentView: action.view
     });
   }
 
   if(action.type === TOGGLE_ADD_POPUP) {
-    console.log('show add popup working');
+    console.log('toggle add popup');
     return Object.assign({}, state, {
       addListItemPopup: {
         isDisplayed: action.isDisplayed
@@ -96,6 +104,29 @@ export const pmReducer = (state = initialState, action) => {
         ...state.userData.categories, action.category]
       }
     });
+  }
+
+  if(action.type === ADD_NEW_ITEM_TO_LIST) {
+    if(action.itemType === 'category') {
+      return Object.assign({}, state, {
+        userData: {
+          ...state.userData,
+          categories: [
+            ...state.userData.categories, action.item
+          ]
+        }
+      });
+    }
+    if(action.itemType === 'transaction') {
+      return Object.assign({}, state, {
+        userData: {
+          ...state.userData,
+          transactions: [
+            ...state.userData.transactions, action.item
+          ]
+        }
+      });
+    }
   }
 
   if(action.type === SET_SELECTED_ITEM) {

@@ -25,6 +25,13 @@ export const addNewCategory = (categoryName, totalBudget) => ({
   }
 });
 
+export const ADD_NEW_ITEM_TO_LIST = 'ADD_NEW_ITEM_TO_LIST';
+export const addNewItemToList = (item, itemType) => ({
+  type: ADD_NEW_ITEM_TO_LIST,
+  item,
+  itemType
+});
+
 export const SET_SELECTED_ITEM = 'SET_SELECTED_ITEM';
 export const setSelectedItem = (categoryItem) => ({
   type: SET_SELECTED_ITEM,
