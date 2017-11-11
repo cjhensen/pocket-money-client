@@ -11,7 +11,7 @@ import {
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
-  currentView: 'transactions',
+  currentView: 'categories',
   isLoggedIn: true,
   transactionsView: {
     activeTab: 'transactions'
@@ -46,7 +46,7 @@ const initialState = {
       {
         transactionName: "Cabo fresh",
         category: "Food",
-        moneySpent: 14.52,
+        moneySpent: 15,
         transactionRecurring: false,
         id: 789
       },

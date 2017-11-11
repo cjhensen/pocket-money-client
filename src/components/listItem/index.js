@@ -44,6 +44,31 @@ export class ListItemContainer extends React.Component {
   }
 
 
+
+  calculateCategorySpent(listItem) {
+    const categoryItem = listItem;
+
+    const transactionsFiltered = this.props.transactions.filter(function(transaction) {
+      return transaction.category === categoryItem.categoryName;
+    });
+
+    let totalSpentPerCategory = 0;
+    transactionsFiltered.forEach(function(transaction) {
+      totalSpentPerCategory += transaction.moneySpent;
+    });
+
+    return totalSpentPerCategory;
+  }
+
+  calculateCategoryRemaining(listItem) {
+    const categoryItem = listItem;
+    const spent = this.calculateCategorySpent(categoryItem);
+
+    return categoryItem.totalBudget - spent;
+  }
+
+
+
   render() {
 
     switch(this.props.listItemType) {
@@ -51,7 +76,9 @@ export class ListItemContainer extends React.Component {
         return <CategoryItem 
                   listItem={this.props.listItem} 
                   handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
-                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)} />;
+                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)}
+                  categorySpent={this.calculateCategorySpent(this.props.listItem)}
+                  categoryRemaining={this.calculateCategoryRemaining(this.props.listItem)} />;
       case 'transaction':
         return <TransactionItem 
                   listItem={this.props.listItem} 
@@ -69,6 +96,7 @@ export class ListItemContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  currentView: state.currentView
+  currentView: state.currentView,
+  transactions: state.userData.transactions
 });
 export default connect(mapStateToProps)(ListItemContainer);

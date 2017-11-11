@@ -12,8 +12,8 @@ export default function CategoryItem(props) {
         <ul>
           <li className="item-label">{listItem.categoryName}</li>
           <li className="item-meter">[#####]</li>
-          <li className="item-pill">__</li>
-          <li className="item-pill">__</li>
+          <li className="item-pill category-remaining">{props.categoryRemaining}</li>
+          <li className="item-pill category-spent">{props.categorySpent}</li>
           <li className="item-pill category-total">{listItem.totalBudget}</li>
           <li onClick={(e) => props.handleItemRemoveBtnClicked(e)} className="item-remove">x</li>
           <li onClick={(e) => props.handleItemEditBtnClicked(e)} className="item-edit">[edit]</li>
