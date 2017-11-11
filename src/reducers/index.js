@@ -16,7 +16,7 @@ const initialState = {
     showEditMode: false
   },
   addListItemPopup: {
-    isDisplayed: true
+    isDisplayed: false
   },
   userData: {
     categories: [
