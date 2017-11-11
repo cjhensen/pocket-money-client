@@ -45,6 +45,7 @@ export class ListItemContainer extends React.Component {
 
 
 
+  // Categories calculated numbers
   calculateCategorySpent(listItem) {
     const categoryItem = listItem;
 
