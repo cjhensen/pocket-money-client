@@ -14,9 +14,9 @@ export default function CategoryItem(props) {
           <li className="item-meter">[#####]</li>
           <li className="item-pill">__</li>
           <li className="item-pill">__</li>
-          <li className="item-pill">{listItem.totalBudget}</li>
+          <li className="item-pill category-total">{listItem.totalBudget}</li>
           <li onClick={(e) => props.handleItemRemoveBtnClicked(e)} className="item-remove">x</li>
-          <li onClick={(e) => props.handleItemRemoveBtnClicked(e)} className="item-edit">[edit]</li>
+          <li onClick={(e) => props.handleItemEditBtnClicked(e)} className="item-edit">[edit]</li>
         </ul>
       </Col>
     </div>

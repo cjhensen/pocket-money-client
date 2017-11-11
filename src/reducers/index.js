@@ -107,13 +107,25 @@ export const pmReducer = (state = initialState, action) => {
   }
 
   if(action.type === DELETE_SELECTED_ITEM) {
-    console.log('delete selected item');
-    return Object.assign({}, state, {
-      userData: {
-        ...state.userData,
-        categories: state.userData.categories.filter(category => category.categoryName !== action.categoryItem.categoryName)
-      }
-    });
+    console.log('delete selected item', action.itemType);
+
+    if(action.itemType === 'category') {
+      return Object.assign({}, state, {
+        userData: {
+          ...state.userData,
+          categories: state.userData.categories.filter(category => category.categoryName !== action.categoryItem.categoryName)
+        }
+      });
+    }
+    if(action.itemType === 'transaction') {
+      return Object.assign({}, state, {
+        userData: {
+          ...state.userData,
+          transactions: state.userData.transactions.filter(transaction => transaction.transactionName !== action.categoryItem.transactionName)
+        }
+      });
+    }
+    
   }
   
   return state;
