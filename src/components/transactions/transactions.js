@@ -25,7 +25,12 @@ export default function Transactions(props) {
   // );
   let listElements = [];
 
+  let listItemType = "";
+  let btnText = "";
   if(props.activeTab === 'transactions') {
+    listItemType = "transaction";
+    btnText = 'Add Transaction';
+
     listElements = transactionsListItems.map((item, index) => 
       <ListItemContainer
         listItemType={'transaction'}
@@ -34,6 +39,9 @@ export default function Transactions(props) {
     );
   }
   if(props.activeTab === 'income') {
+    listItemType = "income";
+    btnText = 'Add Income';
+
     listElements = incomeListItems.map((item, index) =>
       <ListItemContainer
         listItemType={'income'}
@@ -46,7 +54,7 @@ export default function Transactions(props) {
     <div id="transactions" className="view-wrap">
 
       <AddListItemPopupContainer 
-          listItemType={'transaction'} />
+          listItemType={listItemType} />
 
       <div className="transactions-tabs">
         <button 
@@ -61,7 +69,7 @@ export default function Transactions(props) {
         {listElements}
       </div>
 
-      <ListControlsContainer btnText={'Add Transaction'} />
+      <ListControlsContainer btnText={btnText} />
     </div>
   );
 }

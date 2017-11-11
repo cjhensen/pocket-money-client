@@ -17,6 +17,7 @@ export class ListItemContainer extends React.Component {
     const selectedItem = this.getListItemValues(e.currentTarget.closest('.list-item'));
     console.log('selectedItem', selectedItem);
     const itemType = this.props.listItemType;
+    console.log(itemType);
     this.props.dispatch(deleteSelectedItem(selectedItem, itemType));
   }
 
@@ -38,6 +39,11 @@ export class ListItemContainer extends React.Component {
         const moneySpent = Number(parseFloat(item.getElementsByClassName('transaction-total')[0].textContent.replace("$", ""), 10).toFixed(2));
         // const transactionRecurring
         return {'transactionName': transactionName, 'category': category, 'moneySpent': moneySpent};
+      case 'income':
+        const incomeName = item.getElementsByClassName('item-label')[0].textContent;
+        const incomeAmount = Number(parseFloat(item.getElementsByClassName('income-amount')[0].textContent.replace("$", ""), 10).toFixed(2));
+        const incomeRecurring = (item.getElementsByClassName('income-recurring')[0].textContent == 'true');
+        return {'incomeName': incomeName, 'incomeAmount': incomeAmount, 'incomeRecurring': incomeRecurring};
       default:
         return undefined;
     }

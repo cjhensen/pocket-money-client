@@ -45,8 +45,8 @@ export const setSelectedItem = (categoryItem) => ({
 });
 
 export const DELETE_SELECTED_ITEM = 'DELETE_SELECTED_ITEM';
-export const deleteSelectedItem = (categoryItem, itemType) => ({
+export const deleteSelectedItem = (item, itemType) => ({
   type: DELETE_SELECTED_ITEM,
-  categoryItem,
+  item,
   itemType
 });

@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 // Components
 import CategoryPopup from './popups/categoryPopup';
 import TransactionPopup from './popups/transactionPopup';
+import IncomePopup from './popups/incomePopup';
 
 // Assets
 import './addListItemPopup.css';
@@ -60,6 +61,7 @@ export class AddListItemPopupContainer extends React.Component {
   // some api endpoint stuff eventually?
   doSomethingWithFormData(formData) {
     console.log('doSomethingWithFormData');
+    console.log(formData);
     this.props.dispatch(addNewItemToList(formData, this.props.listItemType));
   }
 
@@ -76,7 +78,9 @@ export class AddListItemPopupContainer extends React.Component {
                     handleAddFormSubmit={(e) => this.handleAddFormSubmit(e)} 
                     categories={this.props.categories} />;
         case 'income':
-          return <div>income popup</div>;
+          return <IncomePopup 
+                    handleClosePopupBtnClicked={(e) => this.handleClosePopupBtnClicked(e)}
+                    handleAddFormSubmit={(e) => this.handleAddFormSubmit(e)} />
         default:
           return null;
       }
