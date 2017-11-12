@@ -10,6 +10,12 @@ export const toggleAddPopup = (isDisplayed) => ({
   isDisplayed
 });
 
+export const TOGGLE_EDIT_MODE = 'TOGGLE_EDIT_MODE';
+export const toggleEditMode = (isActive) => ({
+  type: TOGGLE_EDIT_MODE,
+  isActive
+});
+
 export const SHOW_EDIT_MODE = 'SHOW_EDIT_MODE';
 export const showEditMode = (showEditMode) => ({
   type: SHOW_EDIT_MODE,

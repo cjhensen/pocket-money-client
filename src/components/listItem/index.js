@@ -96,17 +96,20 @@ export class ListItemContainer extends React.Component {
                   handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)}
                   categorySpent={this.calculateCategorySpent(this.props.listItem)}
                   categoryRemaining={this.calculateCategoryRemaining(this.props.listItem)}
-                  spentPercentage={this.calculateCategorySpentPercentage(this.props.listItem)} />;
+                  spentPercentage={this.calculateCategorySpentPercentage(this.props.listItem)}
+                  showEditMode={this.props.showEditMode} />;
       case 'transaction':
         return <TransactionItem 
                   listItem={this.props.listItem} 
                   handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
-                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)} />;
+                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)}
+                  showEditMode={this.props.showEditMode} />;
       case 'income':
         return <IncomeItem 
                   listItem={this.props.listItem} 
                   handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
-                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)} />;
+                  handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)}
+                  showEditMode={this.props.showEditMode} />;
       default:
         return undefined;
     }
@@ -115,6 +118,7 @@ export class ListItemContainer extends React.Component {
 
 const mapStateToProps = state => ({
   currentView: state.currentView,
-  transactions: state.userData.transactions
+  transactions: state.userData.transactions,
+  showEditMode: state.editMode.isActive
 });
 export default connect(mapStateToProps)(ListItemContainer);

@@ -6,7 +6,8 @@ import {
   SET_SELECTED_ITEM,
   DELETE_SELECTED_ITEM,
   ADD_NEW_ITEM_TO_LIST,
-  SET_ACTIVE_TAB
+  SET_ACTIVE_TAB,
+  TOGGLE_EDIT_MODE
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
@@ -18,6 +19,9 @@ const initialState = {
   },
   addListItemPopup: {
     isDisplayed: false
+  },
+  editMode: {
+    isActive: false
   },
   userData: {
     categories: [
@@ -171,6 +175,16 @@ export const pmReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       addListItemPopup: {
         isDisplayed: action.isDisplayed
+      }
+    });
+  }
+
+  if(action.type === TOGGLE_EDIT_MODE) {
+    console.log('toggle edit mode');
+    return Object.assign({}, state, {
+      editMode: {
+        ...state.editMode,
+        isActive: action.isActive
       }
     });
   }

@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import ListControls from './listControls';
 
 // Actions
-import {toggleAddPopup} from '../../actions';
+import {toggleAddPopup, toggleEditMode} from '../../actions';
 
 export class ListControlsContainer extends React.Component {
 
@@ -14,13 +14,29 @@ export class ListControlsContainer extends React.Component {
     this.props.dispatch(toggleAddPopup(true));
   }
 
+  handleEditBtnClicked(e) {
+    console.log('handleEditBtnClicked');
+    this.props.dispatch(toggleEditMode(true));
+  };
+
+  handleDoneBtnClicked(e) {
+    console.log('handleDoneBtnClicked');
+    this.props.dispatch(toggleEditMode(false));
+  }
+
   render() {
     return (
       <ListControls 
         btnText={this.props.btnText}
-        handleAddBtnClicked={(e) => this.handleAddBtnClicked(e)} />
+        handleAddBtnClicked={(e) => this.handleAddBtnClicked(e)}
+        handleEditBtnClicked={(e) => this.handleEditBtnClicked(e)}
+        handleDoneBtnClicked={(e) => this.handleDoneBtnClicked(e)}
+        showEditMode={this.props.showEditMode} />
     );
   }
 }
 
-export default connect()(ListControlsContainer);
+const mapStateToProps = state => ({
+  showEditMode: state.editMode.isActive
+});
+export default connect(mapStateToProps)(ListControlsContainer);

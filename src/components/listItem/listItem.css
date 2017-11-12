@@ -45,3 +45,10 @@
 .item-meter {
   flex: 1 0 auto;
 }
+.item-remove,
+.item-edit {
+  display: none;
+}
+.show {
+  display: inline;
+}
