@@ -74,6 +74,16 @@ export class ListItemContainer extends React.Component {
     return categoryItem.totalBudget - spent;
   }
 
+  calculateCategorySpentPercentage(listItem) {
+    const categoryItem = listItem;
+
+    const spent = this.calculateCategorySpent(categoryItem);
+
+    const percentage = ((spent * 100 ) / categoryItem.totalBudget).toFixed(2);
+
+    return percentage;
+  }
+
 
 
   render() {
@@ -85,7 +95,8 @@ export class ListItemContainer extends React.Component {
                   handleItemRemoveBtnClicked={(e) => this.handleItemRemoveBtnClicked(e)}
                   handleItemEditBtnClicked={(e) => this.handleItemEditBtnClicked(e)}
                   categorySpent={this.calculateCategorySpent(this.props.listItem)}
-                  categoryRemaining={this.calculateCategoryRemaining(this.props.listItem)} />;
+                  categoryRemaining={this.calculateCategoryRemaining(this.props.listItem)}
+                  spentPercentage={this.calculateCategorySpentPercentage(this.props.listItem)} />;
       case 'transaction':
         return <TransactionItem 
                   listItem={this.props.listItem} 

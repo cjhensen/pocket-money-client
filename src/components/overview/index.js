@@ -26,10 +26,13 @@ export class OverviewContainer extends React.Component {
   calculateSavings() {
     const incomeSum = this.calculateIncomeSum();
     const categorySum = this.calculateCategorySum();
+    const transactionsSum = this.calculateTransactionsSum();
 
-    const difference = incomeSum - categorySum;
-
-    return difference.toFixed(2);
+    if(transactionsSum > categorySum) {
+      return (incomeSum - transactionsSum).toFixed(2);
+    } else {
+      return (incomeSum - categorySum).toFixed(2);
+    }
   }
 
   calculateTotalEstSavings() {

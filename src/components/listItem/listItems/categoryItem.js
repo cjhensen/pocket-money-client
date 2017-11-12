@@ -1,5 +1,7 @@
 import React from 'react';
 
+import MeterBarContainer from '../../meterBar';
+
 // Assets
 import {Col} from 'react-bootstrap';
 
@@ -11,7 +13,9 @@ export default function CategoryItem(props) {
       <Col xs={12}>
         <ul>
           <li className="item-label">{listItem.categoryName}</li>
-          <li className="item-meter">[#####]</li>
+          <li className="item-meter">
+            <MeterBarContainer percentage={props.spentPercentage} />
+          </li>
           <li className="item-pill category-remaining">{props.categoryRemaining}</li>
           <li className="item-pill category-spent">{props.categorySpent}</li>
           <li className="item-pill category-total">{listItem.totalBudget}</li>

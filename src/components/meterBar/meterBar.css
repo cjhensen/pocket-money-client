@@ -1,0 +1,9 @@
+.meter-bar {
+  height: 12px;
+  width: 100%;
+  background: #d3dde6;
+}
+.meter-bar-percentage {
+  height: 100%;
+  background: #174272;
+}

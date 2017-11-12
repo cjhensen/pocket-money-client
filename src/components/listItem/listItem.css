@@ -41,3 +41,6 @@
 .item-meter {
   flex: 1 0 auto;
 }
+
+.list-item .item-meter div:nth-child(1) div:nth-child(1) {
+}
