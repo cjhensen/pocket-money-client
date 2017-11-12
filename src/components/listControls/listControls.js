@@ -12,12 +12,13 @@ export default function ListControls(props) {
   return (
     <div className="list-controls">
       <Col xs={12}>
-        <Col xs={6}>
+        <Col xs={(props.showEditBtn === true || props.showEditBtn === undefined ? 6 : 12)}>
           <button 
             className="btn btn-add"
             onClick={(e) => props.handleAddBtnClicked(e)}>{btnText}</button>
         </Col>
-        <Col xs={6}>
+        <Col xs={6}
+             className={(props.showEditBtn === true || props.showEditBtn === undefined ? 'show' : 'hide')}>
           <button 
             onClick={(e) => props.handleEditBtnClicked(e)}
             className={'btn btn-edit ' + (props.showEditMode === true ? 'hide' : "")}>

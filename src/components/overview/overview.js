@@ -32,7 +32,7 @@ export default function Overview(props) {
           <Col xs={12}>
             <div className="summary-item savings">
               <div className="summary-item-label">
-                Savings (Full Budget Spent)
+                Savings (If Full Budget Spent)
               </div>
               <div className="summary-item-value">
                 {props.savings}
@@ -54,7 +54,7 @@ export default function Overview(props) {
       </div>
       
 
-      <ListControlsContainer btnText={'Add Transaction'} />
+      <ListControlsContainer btnText={'Add Transaction'} showEditBtn={false} />
 
     </div>
   );

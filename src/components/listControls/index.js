@@ -31,7 +31,8 @@ export class ListControlsContainer extends React.Component {
         handleAddBtnClicked={(e) => this.handleAddBtnClicked(e)}
         handleEditBtnClicked={(e) => this.handleEditBtnClicked(e)}
         handleDoneBtnClicked={(e) => this.handleDoneBtnClicked(e)}
-        showEditMode={this.props.showEditMode} />
+        showEditMode={this.props.showEditMode}
+        showEditBtn={this.props.showEditBtn} />
     );
   }
 }

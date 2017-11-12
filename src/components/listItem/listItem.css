@@ -1,3 +1,7 @@
+.list-items {
+  overflow: scroll;
+  flex: 1;
+}
 .list-item {
   background: #fff;
   display: flow-root;
