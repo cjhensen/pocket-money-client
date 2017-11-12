@@ -22,47 +22,100 @@ const initialState = {
   userData: {
     categories: [
       {
+        categoryName: "Navi Loans",
+        totalBudget: 290
+      },
+      {
+        categoryName: "Thinkful Loans",
+        totalBudget: 295
+      },
+      {
+        categoryName: "Ski Savings",
+        totalBudget: 150
+      },
+      {
+        categoryName: "Online Subscriptions",
+        totalBudget: 19
+      },
+      {
+        categoryName: "Gas",
+        totalBudget: 100
+      },
+      {
+        categoryName: "Quick Groceries",
+        totalBudget: 10
+      },
+      {
+        categoryName: "Grooming Products",
+        totalBudget: 10
+      },
+      {
+        categoryName: "Haircut",
+        totalBudget: 10
+      },
+      {
         categoryName: "Food",
-        totalBudget: 800,
-        id: 12
+        totalBudget: 60
       },
       {
-        categoryName: "Entertainment",
-        totalBudget: 200,
-        id: 23
-      },
-      {
-        categoryName: "School Loans",
-        totalBudget: 1200,
-        id: 34
-      },
-      {
-        categoryName: "Skiing",
-        totalBudget: 300,
-        id: 45
+        categoryName: "Other",
+        totalBudget: 0
       }
     ],
     transactions: [
       {
-        transactionName: "Cabo fresh",
-        category: "Food",
-        moneySpent: 15,
-        transactionRecurring: false,
-        id: 789
+        transactionName: "Navi",
+        category: "Navi Loans",
+        moneySpent: 290,
+        transactionRecurring: true
       },
       {
-        transactionName: "Domo sushi",
-        category: "Food",
-        moneySpent: 30.00,
-        transactionRecurring: false,
-        id: 98
+        transactionName: "Thinkful",
+        category: "Thinkful Loans",
+        moneySpent: 295,
+        transactionRecurring: true
       },
       {
-        transactionName: "Movies",
-        category: "Entertainment",
-        moneySpent: 16.00,
-        transactionRecurring: false,
-        id: 87
+        transactionName: "Ski Savings",
+        category: "Ski Savings",
+        moneySpent: 150,
+        transactionRecurring: true
+      },
+      {
+        transactionName: "Spotify",
+        category: "Online Subscriptions",
+        moneySpent: 10,
+        transactionRecurring: true
+      },
+      {
+        transactionName: "Treehouse",
+        category: "Online Subscriptions",
+        moneySpent: 9,
+        transactionRecurring: true
+      },
+      {
+        transactionName: "Call of Duty",
+        category: "Other",
+        moneySpent: 52,
+        transactionRecurring: false
+      },
+      {
+        transactionName: "Croxleys w/ Tom",
+        category: "Food",
+        moneySpent: 20,
+        transactionRecurring: false
+      },
+      {
+        transactionName: "Strathmore",
+        category: "Food",
+        moneySpent: 2,
+        transactionRecurring: false
+      },
+      {
+        transactionName: "iPhone Case",
+        category: "Other",
+        moneySpent: 20,
+        transactionRecurring: false
       }
     ],
     income: [
@@ -84,6 +137,21 @@ const initialState = {
       { 
         incomeName: "Staples wk4",
         incomeAmount: 280,
+        incomeRecurring: false
+      },
+      {
+        incomeName: "Halloween Mom",
+        incomeAmount: 50,
+        incomeRecurring: false
+      },
+      {
+        incomeName: "Staples tip",
+        incomeAmount: 5,
+        incomeRecurring: false
+      },
+      {
+        incomeName: "Aunt Lisa Halloween",
+        incomeAmount: 20,
         incomeRecurring: false
       }
     ]

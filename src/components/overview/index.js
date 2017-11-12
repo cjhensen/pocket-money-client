@@ -17,7 +17,28 @@ export class OverviewContainer extends React.Component {
     const percentageRemaining = ((difference * 100) / categorySum);
     const percentageUsed = 100 - percentageRemaining;
 
-    return {percentageUsed: percentageUsed.toFixed(2), remainingMoney: difference}
+    return {
+      percentageUsed: percentageUsed.toFixed(2),
+      remainingMoney: difference.toFixed(2)
+     }
+  }
+
+  calculateSavings() {
+    const incomeSum = this.calculateIncomeSum();
+    const categorySum = this.calculateCategorySum();
+
+    const difference = incomeSum - categorySum;
+
+    return difference.toFixed(2);
+  }
+
+  calculateTotalEstSavings() {
+    const incomeSum = this.calculateIncomeSum();
+    const transactionsSum = this.calculateTransactionsSum();
+
+    const difference = incomeSum - transactionsSum;
+
+    return difference.toFixed(2);
   }
 
   calculateTransactionsSum() {
@@ -51,7 +72,10 @@ export class OverviewContainer extends React.Component {
 
   render() {
     return (
-      <Overview remainingBudget={this.calculateRemainingBudget()} />
+      <Overview 
+        remainingBudget={this.calculateRemainingBudget()}
+        savings={this.calculateSavings()}
+        totalEstSavings={this.calculateTotalEstSavings()} />
     );
   }
 }

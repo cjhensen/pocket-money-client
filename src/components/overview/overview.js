@@ -32,10 +32,10 @@ export default function Overview(props) {
           <Col xs={12}>
             <div className="summary-item savings">
               <div className="summary-item-label">
-                Savings
+                Savings (Full Budget Spent)
               </div>
               <div className="summary-item-value">
-                $124.00
+                {props.savings}
               </div>
             </div>
           </Col>
@@ -45,7 +45,7 @@ export default function Overview(props) {
                 Total Estimated Savings
               </div>
               <div className="summary-item-value">
-                $900
+                {props.totalEstSavings}
               </div>
             </div>
           </Col>
