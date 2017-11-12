@@ -1,0 +1,67 @@
+#overview {
+}
+
+
+.remaining-budget-chart {
+  text-align: center; 
+  position: relative;
+}
+.remaining-budget-chart svg {
+  width: 200px;
+  height: 200px;
+}
+.remaining-budget-chart text {
+  display: none;
+}
+.remaining-budget-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 200px;
+}
+.summary-item {
+  background: #fff;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.overview-summary {
+  margin-top: 40px;
+  
+  display: flex;
+  flex: 1;
+  height: 100%;
+
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.remaining-budget-chart,
+.savings-summary {
+  flex: 1;
+}
+.savings-summary {
+  margin-top: 40px;
+}
+.summary-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.summary-item-label {
+  flex: 0 1 70%;
+  padding: 15px;
+}
+.summary-item-value {
+  flex: 0 1 30%;
+  padding: 15px;
+  text-align: center;
+  background: #d3dde6;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}

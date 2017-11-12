@@ -9,6 +9,7 @@ import App from './app';
 import IndexViewContainer from '../indexView';
 import CategoriesContainer from '../categories';
 import TransactionsContainer from '../transactions';
+import OverviewContainer from '../overview';
 import NavBar from '../navBar';
 
 export class AppContainer extends React.Component {
@@ -27,7 +28,7 @@ export class AppContainer extends React.Component {
     if(this.props.isLoggedIn === true) {
       switch(this.props.currentView) {
         case 'overview':
-          return <div className="view-wrap">overviewComponent</div>;
+          return <OverviewContainer />
         case 'transactions':
           return <TransactionsContainer />;
         case 'categories':

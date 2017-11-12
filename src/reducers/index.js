@@ -11,7 +11,7 @@ import {
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
-  currentView: 'categories',
+  currentView: 'overview',
   isLoggedIn: true,
   transactionsView: {
     activeTab: 'transactions'
@@ -38,7 +38,7 @@ const initialState = {
       },
       {
         categoryName: "Skiing",
-        totalBudget: "300",
+        totalBudget: 300,
         id: 45
       }
     ],
