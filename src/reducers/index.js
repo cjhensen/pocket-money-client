@@ -12,8 +12,8 @@ import {
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
-  currentView: 'overview',
-  isLoggedIn: true,
+  currentView: 'signup',
+  isLoggedIn: false,
   transactionsView: {
     activeTab: 'transactions'
   },
