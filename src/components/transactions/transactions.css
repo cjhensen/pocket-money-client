@@ -2,10 +2,10 @@
   width: 50%;
   border-radius: 0;
   height: 40px;
-
-  -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.2);
-  -moz-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.2);
-  box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.2);
+  background: #c8d4e0;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
 }
 #transactions .tab-active {
   background: #fff;

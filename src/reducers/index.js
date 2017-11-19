@@ -26,20 +26,20 @@ const initialState = {
   userData: {
     categories: [
       {
-        categoryName: "Navi Loans",
-        totalBudget: 290
+        categoryName: "Bills",
+        totalBudget: 2000
       },
       {
-        categoryName: "Thinkful Loans",
-        totalBudget: 295
+        categoryName: "Loans",
+        totalBudget: 1000
       },
       {
-        categoryName: "Ski Savings",
-        totalBudget: 150
+        categoryName: "Savings",
+        totalBudget: 1200
       },
       {
         categoryName: "Online Subscriptions",
-        totalBudget: 19
+        totalBudget: 40
       },
       {
         categoryName: "Gas",
@@ -47,19 +47,19 @@ const initialState = {
       },
       {
         categoryName: "Quick Groceries",
-        totalBudget: 10
+        totalBudget: 40
       },
       {
         categoryName: "Grooming Products",
-        totalBudget: 10
+        totalBudget: 30
       },
       {
         categoryName: "Haircut",
-        totalBudget: 10
+        totalBudget: 20
       },
       {
         categoryName: "Food",
-        totalBudget: 60
+        totalBudget: 150
       },
       {
         categoryName: "Other",
@@ -69,20 +69,14 @@ const initialState = {
     transactions: [
       {
         transactionName: "Navi",
-        category: "Navi Loans",
+        category: "Loans",
         moneySpent: 290,
         transactionRecurring: true
       },
       {
-        transactionName: "Thinkful",
-        category: "Thinkful Loans",
+        transactionName: "School",
+        category: "Loans",
         moneySpent: 295,
-        transactionRecurring: true
-      },
-      {
-        transactionName: "Ski Savings",
-        category: "Ski Savings",
-        moneySpent: 150,
         transactionRecurring: true
       },
       {
@@ -98,13 +92,13 @@ const initialState = {
         transactionRecurring: true
       },
       {
-        transactionName: "Call of Duty",
+        transactionName: "Games",
         category: "Other",
         moneySpent: 52,
         transactionRecurring: false
       },
       {
-        transactionName: "Croxleys w/ Tom",
+        transactionName: "Croxleys",
         category: "Food",
         moneySpent: 20,
         transactionRecurring: false
@@ -116,46 +110,21 @@ const initialState = {
         transactionRecurring: false
       },
       {
-        transactionName: "iPhone Case",
+        transactionName: "iPhone",
         category: "Other",
-        moneySpent: 20,
+        moneySpent: 200,
         transactionRecurring: false
       }
     ],
     income: [
       { 
-        incomeName: "Staples wk1",
-        incomeAmount: 280,
-        incomeRecurring: false
+        incomeName: "Job",
+        incomeAmount: 6000,
+        incomeRecurring: true
       },
       { 
-        incomeName: "Staples wk2",
-        incomeAmount: 280,
-        incomeRecurring: false
-      },
-      { 
-        incomeName: "Staples wk3",
-        incomeAmount: 280,
-        incomeRecurring: false
-      },
-      { 
-        incomeName: "Staples wk4",
-        incomeAmount: 280,
-        incomeRecurring: false
-      },
-      {
-        incomeName: "Halloween Mom",
-        incomeAmount: 50,
-        incomeRecurring: false
-      },
-      {
-        incomeName: "Staples tip",
-        incomeAmount: 5,
-        incomeRecurring: false
-      },
-      {
-        incomeName: "Aunt Lisa Halloween",
-        incomeAmount: 20,
+        incomeName: "Side Job",
+        incomeAmount: 600,
         incomeRecurring: false
       }
     ]

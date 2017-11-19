@@ -69,7 +69,8 @@ export class AppContainer extends React.Component {
       <App 
         indexComponent={this.showIndex()}
         viewComponent={this.showView()}
-        navComponent={this.showNav()} />
+        navComponent={this.showNav()}
+        currentView={this.props.currentView} />
     );
   }
 

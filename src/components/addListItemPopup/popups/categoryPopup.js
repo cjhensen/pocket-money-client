@@ -25,7 +25,7 @@ export default function CategoryPopup(props) {
               step="0.01" required />
           </label>
 
-          <button className="btn" type="submit">Add</button>
+          <button className="btn btn-add" type="submit">Add</button>
         </form>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
+import HeaderContainer from '../header';
 
 import './app.css';
 
@@ -17,6 +18,7 @@ export default function App(props) {
       </div>
 
       <div className="app">
+        <HeaderContainer currentView={props.currentView} />
         <Helmet>
           <meta charset="utf-8" name="description" content="" />
           <title>PocketMoney</title>

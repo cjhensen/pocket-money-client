@@ -33,7 +33,7 @@ export default function IncomePopup(props) {
               name="incomeRecurring" />
           </label>
 
-          <button className="btn" type="submit">Add</button>
+          <button className="btn btn-add" type="submit">Add</button>
         </form>
       </div>
     </div>

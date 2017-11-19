@@ -39,3 +39,9 @@
   box-shadow: inset 0px 0px 15px 0px rgba(114,131,146,0.1);
   color: #728392;
 }
+
+.add-item form select {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+}

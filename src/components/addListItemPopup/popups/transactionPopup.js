@@ -40,7 +40,7 @@ export default function TransactionPopup(props) {
             </select>
           </label>
 
-          <button className="btn" type="submit">Add</button>
+          <button className="btn btn-add" type="submit">Add</button>
         </form>
       </div>
     </div>
