@@ -1,0 +1,13 @@
+#header {
+  background: #3e5d7f;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
+
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+  z-index: 890;
+  height: 50px;
+  line-height: 50px;
+}
