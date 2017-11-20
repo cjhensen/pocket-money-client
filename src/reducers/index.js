@@ -7,12 +7,13 @@ import {
   DELETE_SELECTED_ITEM,
   ADD_NEW_ITEM_TO_LIST,
   SET_ACTIVE_TAB,
-  TOGGLE_EDIT_MODE
+  TOGGLE_EDIT_MODE,
+  LOG_IN_SUCCESS
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
 const initialState = {
-  currentView: 'signup',
+  currentView: 'index',
   isLoggedIn: false,
   transactionsView: {
     activeTab: 'transactions'
@@ -132,6 +133,15 @@ const initialState = {
 };
 
 export const pmReducer = (state = initialState, action) => {
+
+  if(action.type === LOG_IN_SUCCESS) {
+    console.log('log in success');
+    return Object.assign({}, state, {
+      isLoggedIn: action.isLoggedIn,
+      currentView: 'overview'
+    });
+  }
+
   if(action.type === CHANGE_VIEW) {
     console.log('change view');
     return Object.assign({}, state, {
@@ -257,7 +267,7 @@ export const pmReducer = (state = initialState, action) => {
         }
       });
     }
-    
+
   }
   
   return state;

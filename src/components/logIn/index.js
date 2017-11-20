@@ -3,14 +3,14 @@ import React from 'react';
 export default function SignUp(props) {
   return (
     <div id="log-in">
-      <form action="/loin">
+      <form onSubmit={e => props.handleLogInSubmit(e)}>
 
-        <label htmlFor="email">
-          <input type="email" name="email" id="email" placeholder="Email" required />
+        <label htmlFor="username">
+          <input type="username" name="username" id="username" placeholder="Username" required />
         </label>
 
         <label htmlFor="password">
-          <input type="password" name="firstName" id="firstName" placeholder="Password" required />
+          <input type="password" name="password" id="password" placeholder="Password" required />
         </label>
 
         <button type="submit">Log In</button>

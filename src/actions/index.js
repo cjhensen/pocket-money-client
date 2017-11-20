@@ -1,3 +1,7 @@
+import {API_BASE_URL} from '../config';
+import {normalizeResponseErrors} from './utils';
+
+
 export const CHANGE_VIEW = 'CHANGE_VIEW';
 export const changeView = (view) => ({
   type: CHANGE_VIEW,
@@ -56,3 +60,102 @@ export const deleteSelectedItem = (item, itemType) => ({
   item,
   itemType
 });
+
+
+// API Integration
+
+
+export const CREATE_USER_REQUEST = 'CREATE_USER_REQUEST';
+
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const createUserSuccess = user => ({
+  type: CREATE_USER_SUCCESS,
+  user
+});
+
+
+
+export const REGISTER_USER = 'REGISTER_USER';
+// export const registerUser = user => dispatch => {
+//   console.log('user', user);
+//   return fetch(`${API_BASE_URL}/signup`, {
+//     method: 'POST',
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//     body: JSON.stringify(user)
+//   })
+//     // .then(response => normalizeResponseErrors(response))
+//     // .then(response => response.json())
+// };
+
+// export const registerUser = user => dispatch => {
+//   console.log('registerUser');
+//   fetch(`${API_BASE_URL}/signup`, {
+//     method: 'POST',
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//     body: JSON.stringify(user)
+//   })
+//   .then(response => normalizeResponseErrors(response))
+//   // .then(response => response.json())
+//   .catch(error => {
+//     throw(error);
+//   })
+// };
+
+export const registerUser = user => dispatch => {
+  console.log('register user');
+  return fetch(`${API_BASE_URL}/signup`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
+  .then(response => normalizeResponseErrors(response))
+  .then(response => response.json())
+  .then(response => {
+    // if(response.ok) {
+    //   dispatch(logInSuccess(true));
+    // }
+    console.log(response);
+  })
+  .catch(error => {
+    throw(error);
+  })
+};
+
+export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
+export const logInSuccess = isLoggedIn => ({
+  type: LOG_IN_SUCCESS,
+  isLoggedIn
+});
+
+export const logInUser = user => dispatch => {
+  console.log('logInUser');
+  return fetch(`${API_BASE_URL}/login`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
+  .then(response => normalizeResponseErrors(response))
+  .then(response => response.json())
+  .then(response => {
+    if(response.ok) {
+      dispatch(logInSuccess(true));
+    }
+  })
+  // .then(() => dispatch(logInSuccess(true)))
+  .catch(error => {
+    throw(error);
+  })
+};
+
+
+
+
+
