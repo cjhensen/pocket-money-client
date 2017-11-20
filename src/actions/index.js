@@ -112,15 +112,20 @@ export const registerUser = user => dispatch => {
     headers: {
       'content-type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify(user)
   })
   .then(response => normalizeResponseErrors(response))
-  .then(response => response.json())
   .then(response => {
+    console.log('register good');
     // if(response.ok) {
     //   dispatch(logInSuccess(true));
     // }
-    console.log(response);
+    if(!response.ok) {
+      console.log('error');
+    }
+    // Log in after register
+    dispatch(logInSuccess(true));
   })
   .catch(error => {
     throw(error);
@@ -140,17 +145,22 @@ export const logInUser = user => dispatch => {
     headers: {
       'content-type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify(user)
   })
   .then(response => normalizeResponseErrors(response))
-  .then(response => response.json())
   .then(response => {
-    if(response.ok) {
-      dispatch(logInSuccess(true));
+    if(!response.ok) {
+      console.log('error');
     }
+    dispatch(logInSuccess(true));
   })
-  // .then(() => dispatch(logInSuccess(true)))
   .catch(error => {
+    const {code} = error;
+    if(code === 401) {
+      // Do something on failure
+      console.log('request failed');
+    }
     throw(error);
   })
 };
