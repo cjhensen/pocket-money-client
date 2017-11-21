@@ -137,9 +137,44 @@ export const logInUser = user => dispatch => {
   })
 };
 
+/* **************************************************
+   Add List Items
+ ************************************************** */
+ export const FETCH_INITIAL_USER_DATA_SUCCESS = 'FETCH_INITIAL_USER_DATA_SUCCESS';
+ export const fetchInitialUserDataScucess = (userData) => ({
+  type: FETCH_INITIAL_USER_DATA_SUCCESS,
+  userData
+ });
+
+ export const fetchInitialUserData = () => dispatch => {
+  console.log('fetchInitialUserData');
+
+  return fetch(`${API_BASE_URL}/userdata`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json'
+    },
+    credentials: 'include'
+  })
+  .then(response => normalizeResponseErrors(response))
+  .then(response => response.json())
+  .then(response => {
+    if(!response.ok) {
+      console.log('error');
+    }
+    console.log('response', response);
+    const userData = response.userData;
+    dispatch(fetchInitialUserDataScucess(userData));
+  })
+  .catch(error => {
+    // const {code} = error;
+    throw(error);
+  })
+ };
+
 
 /* **************************************************
-   Transaction
+   Add List Items
  ************************************************** */
  export const ADD_ITEM_TO_LIST_SUCCESS = 'ADD_ITEM_TO_LIST_SUCCESS';
  export const addItemToListSuccess = (item, itemType) => ({
@@ -169,7 +204,7 @@ export const addNewItemToList = (item, itemType) => dispatch => {
     dispatch(addItemToListSuccess(item, itemType));
   })
   .catch(error => {
-    const {code} = error;
+    // const {code} = error;
     throw(error);
   })
 };

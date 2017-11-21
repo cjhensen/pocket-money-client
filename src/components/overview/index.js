@@ -1,9 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {fetchInitialUserData} from '../../actions';
+
 import Overview from './overview';
 
 export class OverviewContainer extends React.Component {
+
+  componentDidMount() {
+    if(!this.props.isLoggedIn) {
+      return;
+    }
+    this.props.dispatch(fetchInitialUserData());
+  }
 
   calculateRemainingBudget() {
     const transactionsSum = this.calculateTransactionsSum();
@@ -84,6 +93,7 @@ export class OverviewContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  isLoggedIn: state.isLoggedIn,
   transactions: state.userData.transactions,
   categories: state.userData.categories,
   income: state.userData.income

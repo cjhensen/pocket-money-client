@@ -9,7 +9,8 @@ import {
   SET_ACTIVE_TAB,
   TOGGLE_EDIT_MODE,
   LOG_IN_SUCCESS,
-  ADD_ITEM_TO_LIST_SUCCESS
+  ADD_ITEM_TO_LIST_SUCCESS,
+  FETCH_INITIAL_USER_DATA_SUCCESS
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
@@ -140,6 +141,13 @@ export const pmReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       isLoggedIn: action.isLoggedIn,
       currentView: 'overview'
+    });
+  }
+
+  if(action.type === FETCH_INITIAL_USER_DATA_SUCCESS) {
+    console.log('fetch success, syncing state');
+    return Object.assign({}, state, {
+      userData: action.userData
     });
   }
 
