@@ -23,6 +23,11 @@ const initialState = {
   },
   editMode: {
     isActive: false
+  },
+  userData: {
+    transactions: [],
+    categories: [],
+    income: []
   }
 };
 
