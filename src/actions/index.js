@@ -26,22 +26,6 @@ export const showEditMode = (showEditMode) => ({
   showEditMode
 });
 
-export const ADD_NEW_CATEGORY = 'ADD_NEW_CATEGORY';
-export const addNewCategory = (categoryName, totalBudget) => ({
-  type: ADD_NEW_CATEGORY,
-  category: {
-    categoryName,
-    totalBudget
-  }
-});
-
-export const ADD_NEW_ITEM_TO_LIST = 'ADD_NEW_ITEM_TO_LIST';
-// export const addNewItemToList = (item, itemType) => ({
-//   type: ADD_NEW_ITEM_TO_LIST,
-//   item,
-//   itemType
-// });
-
 export const SET_ACTIVE_TAB = 'SET_ACTIVE_TAB';
 export const setActiveTab = (tab) => ({
   type: SET_ACTIVE_TAB,
@@ -53,26 +37,6 @@ export const setSelectedItem = (categoryItem) => ({
   type: SET_SELECTED_ITEM,
   categoryItem
 });
-
-export const DELETE_SELECTED_ITEM = 'DELETE_SELECTED_ITEM';
-export const deleteSelectedItem = (item, itemType) => ({
-  type: DELETE_SELECTED_ITEM,
-  item,
-  itemType
-});
-
-
-// API Integration
-
-
-// export const CREATE_USER_REQUEST = 'CREATE_USER_REQUEST';
-
-// export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
-// export const createUserSuccess = user => ({
-//   type: CREATE_USER_SUCCESS,
-//   user
-// });
-
 
 /* **************************************************
    Login & Signup
@@ -174,7 +138,7 @@ export const logInUser = user => dispatch => {
 
 
 /* **************************************************
-   Add List Items
+   Add List Item
  ************************************************** */
  export const ADD_ITEM_TO_LIST_SUCCESS = 'ADD_ITEM_TO_LIST_SUCCESS';
  export const addItemToListSuccess = (item, itemType) => ({
@@ -210,7 +174,7 @@ export const addNewItemToList = (item, itemType) => dispatch => {
 };
 
 /* **************************************************
-   Delete List Items
+   Delete List Item
  ************************************************** */
 export const DELETE_LIST_ITEM_SUCCESS = 'DELETE_LIST_ITEM_SUCCESS';
 export const deleteListItemSuccess = (item, itemType) => ({
