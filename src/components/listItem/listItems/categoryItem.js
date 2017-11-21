@@ -9,7 +9,7 @@ export default function CategoryItem(props) {
   const listItem = props.listItem;
 
   return (
-    <div className="list-item">
+    <div className="list-item" data-id={listItem.id}>
       <Col xs={12}>
         <ul>
           <li className="item-label">{listItem.categoryName}</li>

@@ -138,7 +138,7 @@ export const logInUser = user => dispatch => {
 };
 
 /* **************************************************
-   Add List Items
+   Fetch Initial User Data
  ************************************************** */
  export const FETCH_INITIAL_USER_DATA_SUCCESS = 'FETCH_INITIAL_USER_DATA_SUCCESS';
  export const fetchInitialUserDataScucess = (userData) => ({
@@ -209,6 +209,38 @@ export const addNewItemToList = (item, itemType) => dispatch => {
   })
 };
 
+/* **************************************************
+   Delete List Items
+ ************************************************** */
+export const DELETE_LIST_ITEM_SUCCESS = 'DELETE_LIST_ITEM_SUCCESS';
+export const deleteListItemSuccess = (item, itemType) => ({
+  type: DELETE_LIST_ITEM_SUCCESS,
+  item,
+  itemType
+});
+
+export const deleteItemFromList = (item, itemType) => dispatch => {
+  console.log('deleteItemFromList');
+
+  return fetch(`${API_BASE_URL}/${itemType}/${item.id}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json'
+    },
+    credentials: 'include'
+  })
+  .then(response => normalizeResponseErrors(response))
+  .then(response => {
+    if(!response.ok) {
+      console.log('error');
+    }
+    // on success of delete
+    dispatch(deleteListItemSuccess(item, itemType));
+  })
+  .catch(error => {
+    throw(error);
+  })
+};
 
 
 

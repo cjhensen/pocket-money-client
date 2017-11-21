@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {deleteSelectedItem} from '../../actions';
+import {deleteItemFromList} from '../../actions';
 
 // Components
 import CategoryItem from './listItems/categoryItem';
@@ -18,7 +18,7 @@ export class ListItemContainer extends React.Component {
     console.log('selectedItem', selectedItem);
     const itemType = this.props.listItemType;
     console.log(itemType);
-    this.props.dispatch(deleteSelectedItem(selectedItem, itemType));
+    this.props.dispatch(deleteItemFromList(selectedItem, itemType));
   }
 
   handleItemEditBtnClicked(e) {
@@ -30,20 +30,21 @@ export class ListItemContainer extends React.Component {
 
     switch(this.props.listItemType) {
       case 'category':
+        console.log('item', item);
         const categoryName = item.getElementsByClassName('item-label')[0].textContent;
         const totalBudget = Number(parseFloat(item.getElementsByClassName('category-total')[0].textContent.replace("$", ""), 10).toFixed(2));
-        return {'categoryName': categoryName, 'totalBudget': totalBudget};
+        return {'categoryName': categoryName, 'totalBudget': totalBudget, 'id': item.dataset.id};
       case 'transaction':
         const transactionName = item.getElementsByClassName('item-label')[0].textContent;
         const category = item.getElementsByClassName('transaction-category')[0].textContent;
         const moneySpent = Number(parseFloat(item.getElementsByClassName('transaction-total')[0].textContent.replace("$", ""), 10).toFixed(2));
         // const transactionRecurring
-        return {'transactionName': transactionName, 'category': category, 'moneySpent': moneySpent};
+        return {'transactionName': transactionName, 'category': category, 'moneySpent': moneySpent, 'id': item.dataset.id};
       case 'income':
         const incomeName = item.getElementsByClassName('item-label')[0].textContent;
         const incomeAmount = Number(parseFloat(item.getElementsByClassName('income-amount')[0].textContent.replace("$", ""), 10).toFixed(2));
         const incomeRecurring = (item.getElementsByClassName('income-recurring')[0].textContent == 'true');
-        return {'incomeName': incomeName, 'incomeAmount': incomeAmount, 'incomeRecurring': incomeRecurring};
+        return {'incomeName': incomeName, 'incomeAmount': incomeAmount, 'incomeRecurring': incomeRecurring, 'id': item.dataset.id};
       default:
         return undefined;
     }

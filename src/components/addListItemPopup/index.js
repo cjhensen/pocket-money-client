@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import shortid from 'shortid';
+
 // Components
 import CategoryPopup from './popups/categoryPopup';
 import TransactionPopup from './popups/transactionPopup';
@@ -53,8 +55,9 @@ export class AddListItemPopupContainer extends React.Component {
       if(formElements[i].nodeName === "SELECT") {
         formData[formElements[i].name] = formElements[i].value;
       }
+      formData["id"] = shortid.generate();
     }
-
+    console.log('formData', formData);
     return formData;
   }
 

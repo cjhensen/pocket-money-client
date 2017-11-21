@@ -10,7 +10,8 @@ import {
   TOGGLE_EDIT_MODE,
   LOG_IN_SUCCESS,
   ADD_ITEM_TO_LIST_SUCCESS,
-  FETCH_INITIAL_USER_DATA_SUCCESS
+  FETCH_INITIAL_USER_DATA_SUCCESS,
+  DELETE_LIST_ITEM_SUCCESS
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
@@ -249,14 +250,14 @@ export const pmReducer = (state = initialState, action) => {
     });
   }
 
-  if(action.type === DELETE_SELECTED_ITEM) {
+  if(action.type === DELETE_LIST_ITEM_SUCCESS) {
     console.log('delete selected item', action.itemType);
     console.log('item', action.item);
     if(action.itemType === 'category') {
       return Object.assign({}, state, {
         userData: {
           ...state.userData,
-          categories: state.userData.categories.filter(category => category.categoryName !== action.item.categoryName)
+          categories: state.userData.categories.filter(category => category.id !== action.item.id)
         }
       });
     }
@@ -264,7 +265,7 @@ export const pmReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         userData: {
           ...state.userData,
-          transactions: state.userData.transactions.filter(transaction => transaction.transactionName !== action.item.transactionName)
+          transactions: state.userData.transactions.filter(transaction => transaction.id !== action.item.id)
         }
       });
     }
@@ -272,7 +273,7 @@ export const pmReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         userData: {
           ...state.userData,
-          income: state.userData.income.filter(incomeItem => incomeItem.incomeName !== action.item.incomeName)
+          income: state.userData.income.filter(incomeItem => incomeItem.id !== action.item.id)
         }
       });
     }
