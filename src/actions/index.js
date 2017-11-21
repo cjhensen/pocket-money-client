@@ -36,11 +36,11 @@ export const addNewCategory = (categoryName, totalBudget) => ({
 });
 
 export const ADD_NEW_ITEM_TO_LIST = 'ADD_NEW_ITEM_TO_LIST';
-export const addNewItemToList = (item, itemType) => ({
-  type: ADD_NEW_ITEM_TO_LIST,
-  item,
-  itemType
-});
+// export const addNewItemToList = (item, itemType) => ({
+//   type: ADD_NEW_ITEM_TO_LIST,
+//   item,
+//   itemType
+// });
 
 export const SET_ACTIVE_TAB = 'SET_ACTIVE_TAB';
 export const setActiveTab = (tab) => ({
@@ -65,46 +65,18 @@ export const deleteSelectedItem = (item, itemType) => ({
 // API Integration
 
 
-export const CREATE_USER_REQUEST = 'CREATE_USER_REQUEST';
+// export const CREATE_USER_REQUEST = 'CREATE_USER_REQUEST';
 
-export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
-export const createUserSuccess = user => ({
-  type: CREATE_USER_SUCCESS,
-  user
-});
+// export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+// export const createUserSuccess = user => ({
+//   type: CREATE_USER_SUCCESS,
+//   user
+// });
 
 
-
-export const REGISTER_USER = 'REGISTER_USER';
-// export const registerUser = user => dispatch => {
-//   console.log('user', user);
-//   return fetch(`${API_BASE_URL}/signup`, {
-//     method: 'POST',
-//     headers: {
-//       'content-type': 'application/json'
-//     },
-//     body: JSON.stringify(user)
-//   })
-//     // .then(response => normalizeResponseErrors(response))
-//     // .then(response => response.json())
-// };
-
-// export const registerUser = user => dispatch => {
-//   console.log('registerUser');
-//   fetch(`${API_BASE_URL}/signup`, {
-//     method: 'POST',
-//     headers: {
-//       'content-type': 'application/json'
-//     },
-//     body: JSON.stringify(user)
-//   })
-//   .then(response => normalizeResponseErrors(response))
-//   // .then(response => response.json())
-//   .catch(error => {
-//     throw(error);
-//   })
-// };
-
+/* **************************************************
+   Login & Signup
+ ************************************************** */
 export const registerUser = user => dispatch => {
   console.log('register user');
   return fetch(`${API_BASE_URL}/signup`, {
@@ -164,6 +136,50 @@ export const logInUser = user => dispatch => {
     throw(error);
   })
 };
+
+
+/* **************************************************
+   Transaction
+ ************************************************** */
+ export const ADD_ITEM_TO_LIST_SUCCESS = 'ADD_ITEM_TO_LIST_SUCCESS';
+ export const addItemToListSuccess = (item, itemType) => ({
+  type: ADD_ITEM_TO_LIST_SUCCESS,
+  item,
+  itemType
+ });
+
+export const addNewItemToList = (item, itemType) => dispatch => {
+  console.log('addNewItemToList');
+  console.log(item, itemType);
+
+  return fetch(`${API_BASE_URL}/${itemType}`, {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json'
+    },
+    credentials: 'include',
+    body: JSON.stringify(item)
+  })
+  .then(response => normalizeResponseErrors(response))
+  .then(response => {
+    if(!response.ok) {
+      console.log('error');
+    }
+    // on success
+    dispatch(addItemToListSuccess(item, itemType));
+  })
+  .catch(error => {
+    const {code} = error;
+    throw(error);
+  })
+};
+
+
+
+
+
+
+
 
 
 

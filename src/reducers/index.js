@@ -8,7 +8,8 @@ import {
   ADD_NEW_ITEM_TO_LIST,
   SET_ACTIVE_TAB,
   TOGGLE_EDIT_MODE,
-  LOG_IN_SUCCESS
+  LOG_IN_SUCCESS,
+  ADD_ITEM_TO_LIST_SUCCESS
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
@@ -188,7 +189,7 @@ export const pmReducer = (state = initialState, action) => {
     });
   }
 
-  if(action.type === ADD_NEW_ITEM_TO_LIST) {
+  if(action.type === ADD_ITEM_TO_LIST_SUCCESS) {
     if(action.itemType === 'category') {
       return Object.assign({}, state, {
         userData: {
