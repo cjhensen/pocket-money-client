@@ -7,4 +7,10 @@ describe('<IndexViewContainer />', () => {
   it('renders without crashing', () => {
     shallow(<IndexViewContainer currentView={'index'} />);
   });
+
+  it('renders the homepage', () => {
+    const currentView = "index";
+    const wrapper = mount(<IndexViewContainer currentView={currentView} />);
+    expect(wrapper.find('#view-index').length).toBe(1);
+  });
 });
