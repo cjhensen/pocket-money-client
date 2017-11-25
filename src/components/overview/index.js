@@ -26,9 +26,10 @@ export class OverviewContainer extends React.Component {
     const percentageRemaining = ((difference * 100) / categorySum);
     const percentageUsed = 100 - percentageRemaining;
 
+
     return {
-      percentageUsed: percentageUsed.toFixed(2),
-      remainingMoney: difference.toFixed(2)
+      percentageUsed: Number(parseFloat(percentageUsed).toFixed(2)),
+      remainingMoney: Number(parseFloat(difference).toFixed(2))
      }
   }
 
@@ -38,9 +39,9 @@ export class OverviewContainer extends React.Component {
     const transactionsSum = this.calculateTransactionsSum();
 
     if(transactionsSum > categorySum) {
-      return (incomeSum - transactionsSum).toFixed(2);
+      return Number(parseFloat((incomeSum - transactionsSum)).toFixed(2));
     } else {
-      return (incomeSum - categorySum).toFixed(2);
+      return Number(parseFloat((incomeSum - categorySum)).toFixed(2));
     }
   }
 
@@ -50,7 +51,7 @@ export class OverviewContainer extends React.Component {
 
     const difference = incomeSum - transactionsSum;
 
-    return difference.toFixed(2);
+    return Number(parseFloat(difference).toFixed(2));
   }
 
   calculateTransactionsSum() {
@@ -59,7 +60,7 @@ export class OverviewContainer extends React.Component {
       transactionsSum += transaction.moneySpent;
     });
     console.log('ts', transactionsSum);
-    return transactionsSum;
+    return Number(parseFloat(transactionsSum).toFixed(2));
   }
 
   calculateIncomeSum() {
@@ -68,7 +69,7 @@ export class OverviewContainer extends React.Component {
       incomeSum += income.incomeAmount;
     });
     console.log('is', incomeSum);
-    return incomeSum;
+    return Number(parseFloat(incomeSum).toFixed(2));
   }
 
   calculateCategorySum() {
@@ -77,7 +78,7 @@ export class OverviewContainer extends React.Component {
       categorySum += category.totalBudget;
     });
     console.log('cs', categorySum);
-    return categorySum;
+    return Number(parseFloat(categorySum).toFixed(2));
   }
 
 
