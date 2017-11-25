@@ -7,4 +7,9 @@ describe('<LogIn />', () => {
   it('renders without crashing', () => {
     shallow(<LogIn />);
   });
+
+  it('renders the login form', () => {
+    const wrapper = mount(<LogIn />);
+    expect(wrapper.find('#log-in').length).toBe(1);
+  });
 });
