@@ -80,7 +80,8 @@ export class ListItemContainer extends React.Component {
 
     const spent = this.calculateCategorySpent(categoryItem);
 
-    const percentage = ((spent * 100 ) / categoryItem.totalBudget).toFixed(2);
+    const percentage = Number(parseFloat(((spent * 100 ) / categoryItem.totalBudget).toFixed(2)));
+    
 
     return percentage;
   }

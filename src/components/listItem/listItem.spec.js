@@ -7,6 +7,102 @@ describe('<ListItemContainer />', () => {
   it('Renders without crashing', () => {
     shallow(<ListItemContainer />);
   });
+
+  it('should calculate the total spent for each category', () => {
+    const listItemType = 'category';
+    const listItem = {
+      "totalBudget" : 200,
+      "id" : "Hy--yp-PgG",
+      "categoryName" : "test"
+    };
+    const transactions = [
+      {
+        "category" : "test",
+        "moneySpent" : 10,
+        "id" : "HyGv1abwgM",
+        "transactionName" : "test1"
+      },
+      {
+        "category" : "test",
+        "moneySpent" : 10,
+        "id" : "rJM2ypbveG",
+        "transactionName" : "test2"
+      }
+    ];
+    const showEditMode = false;
+    const wrapper = mount(<ListItemContainer 
+                            listItemType={listItemType}
+                            listItem={listItem}
+                            showEditMode={showEditMode}
+                            transactions={transactions} />);
+
+    const spent = wrapper.instance().calculateCategorySpent(listItem);
+    expect(spent).toEqual(20);
+  });
+
+  it('should calculate the amount remaining for each category', () => {
+    const listItemType = 'category';
+    const listItem = {
+      "totalBudget" : 200,
+      "id" : "Hy--yp-PgG",
+      "categoryName" : "test"
+    };
+    const transactions = [
+      {
+        "category" : "test",
+        "moneySpent" : 10,
+        "id" : "HyGv1abwgM",
+        "transactionName" : "test1"
+      },
+      {
+        "category" : "test",
+        "moneySpent" : 10,
+        "id" : "rJM2ypbveG",
+        "transactionName" : "test2"
+      }
+    ];
+    const showEditMode = false;
+    const wrapper = mount(<ListItemContainer 
+                            listItemType={listItemType}
+                            listItem={listItem}
+                            showEditMode={showEditMode}
+                            transactions={transactions} />);
+
+    const spent = wrapper.instance().calculateCategoryRemaining(listItem);
+    expect(spent).toEqual(180);
+  });
+
+  it('should calculate the amount remaining for each category', () => {
+    const listItemType = 'category';
+    const listItem = {
+      "totalBudget" : 200,
+      "id" : "Hy--yp-PgG",
+      "categoryName" : "test"
+    };
+    const transactions = [
+      {
+        "category" : "test",
+        "moneySpent" : 10,
+        "id" : "HyGv1abwgM",
+        "transactionName" : "test1"
+      },
+      {
+        "category" : "test",
+        "moneySpent" : 19.26,
+        "id" : "rJM2ypbveG",
+        "transactionName" : "test2"
+      }
+    ];
+    const showEditMode = false;
+    const wrapper = mount(<ListItemContainer 
+                            listItemType={listItemType}
+                            listItem={listItem}
+                            showEditMode={showEditMode}
+                            transactions={transactions} />);
+
+    const spent = wrapper.instance().calculateCategorySpentPercentage(listItem);
+    expect(spent).toEqual(14.63);
+  });
 });
 
 describe('CategoryItem', () => {
