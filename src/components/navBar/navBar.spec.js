@@ -42,13 +42,23 @@ describe('<NavBar />', () => {
   xit('should change the active class to the active views corresponding nav element', () => {
     const navElements = [
       "overview",
-      "transactions"
+      "transactions",
+      "categories",
+      "insights",
+      "settings"
     ];
+    let currentView = 'overview';
     const callback = jest.fn();
-    const wrapper = mount(<NavBar navElements={navElements} currentView={'overview'} changView={callback} />);
-    expect(wrapper.find('a.active .nav-text').text()).toEqual('overview');
+    const wrapper = mount(<NavBar navElements={navElements} currentView={currentView} changeView={callback} />);
+    const button = wrapper.find('button.active');
+    const buttonText = button.find('.nav-text');
+    // expect(buttonText.text()).toEqual('overview');
     wrapper.find('button').at(1).simulate('click');
-    expect(callback).toHaveBeenCalledWith('overview');
-    expect(wrapper.find('a.active .nav-text').text()).toEqual('transactions');
+    currentView = 'transactions';
+    expect(callback).toHaveBeenCalledWith('transactions');
+    // expect(wrapper.find('a.active .nav-text').text()).toEqual('transactions');
+    const currentButton = wrapper.find('button.active');
+    const currentButtonText = currentButton.find('.nav-text');
+    expect(currentButtonText.text()).toEqual('transactions');
   });
 });
