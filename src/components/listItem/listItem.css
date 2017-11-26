@@ -46,6 +46,14 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.item-remove {
+  background: url(https://www.materialui.co/materialIcons/action/highlight_remove_grey_192x192.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
 
 .item-meter {
   flex: 1 0 auto;

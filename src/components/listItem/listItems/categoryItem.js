@@ -21,10 +21,10 @@ export default function CategoryItem(props) {
           <li className="item-pill category-total">{listItem.totalBudget}</li>
           <li 
             onClick={(e) => props.handleItemRemoveBtnClicked(e)} 
-            className={'item-remove ' + (props.showEditMode === true ? 'show' : "")}>x</li>
+            className={'item-remove ' + (props.showEditMode === true ? 'show' : "")}></li>
           <li 
             onClick={(e) => props.handleItemEditBtnClicked(e)} 
-            className={'item-edit ' + (props.showEditMode === true ? 'show' : "")}>[edit]</li>
+            className={'item-edit ' + (props.showEditMode === true ? '' : "")}>[edit]</li>
         </ul>
       </Col>
     </div>
