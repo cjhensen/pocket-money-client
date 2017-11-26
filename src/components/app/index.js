@@ -52,7 +52,6 @@ export class AppContainer extends React.Component {
       'overview',
       'transactions',
       'categories',
-      'insights',
       'settings'
     ];
 
