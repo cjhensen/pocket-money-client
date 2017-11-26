@@ -1,4 +1,5 @@
-#sign-up form input {
+#sign-up form input,
+#log-in form input {
   background: #eaf3f9;
   padding: 15px;
   width: 100%;
@@ -11,11 +12,13 @@
   color: #728392;
 }
 
-#sign-up form input::placeholder {
+#sign-up form input::placeholder,
+#log-in form input::placeholder {
   color: #728392;
 }
 
-#sign-up button {
+#sign-up button,
+#log-in button {
   width: 100%;
   padding: 15px;
   background: #174272;
