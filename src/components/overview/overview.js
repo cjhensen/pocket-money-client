@@ -32,7 +32,7 @@ export default function Overview(props) {
           <Col xs={12}>
             <div className="summary-item savings">
               <div className="summary-item-label">
-                Savings (If Full Budget Spent)
+                Savings
               </div>
               <div className="summary-item-value">
                 {props.savings}

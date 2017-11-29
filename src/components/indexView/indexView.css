@@ -1,0 +1,10 @@
+header {
+  margin-top: 30px;
+}
+#view-index {
+  background: #eaf3f9;
+}
+#view-index .logo img {
+  max-width: 50%;
+  margin: 0 auto;
+}
