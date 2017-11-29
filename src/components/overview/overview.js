@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 import { CirclePie } from 'salad-ui.chart';
 import ListControlsContainer from '../listControls';
@@ -11,9 +11,12 @@ export default function Overview(props) {
   return (
     <div id="overview" className="view-wrap">
 
+      <Col xs={12} md={8} mdOffset={2} lg={6} lgOffset={3}>
+
       <AddListItemPopupContainer listItemType={'transaction'} />
 
       <div className="overview-summary">
+
 
         <div className="remaining-budget-chart"> 
           <CirclePie 
@@ -55,6 +58,8 @@ export default function Overview(props) {
       
 
       <ListControlsContainer btnText={'Add Transaction'} showEditBtn={false} />
+
+      </Col>
 
     </div>
   );
