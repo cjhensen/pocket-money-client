@@ -43,6 +43,7 @@ export class ListItemContainer extends React.Component {
       case 'income':
         const incomeName = item.getElementsByClassName('item-label')[0].textContent;
         const incomeAmount = Number(parseFloat(item.getElementsByClassName('income-amount')[0].textContent.replace("$", ""), 10).toFixed(2));
+        // eslint-disable-next-line
         const incomeRecurring = (item.getElementsByClassName('income-recurring')[0].textContent == 'true');
         return {'incomeName': incomeName, 'incomeAmount': incomeAmount, 'incomeRecurring': incomeRecurring, 'id': item.dataset.id};
       default:

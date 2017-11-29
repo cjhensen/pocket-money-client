@@ -1,7 +1,6 @@
 import React from 'react';
 
 // Assets
-import {Col} from 'react-bootstrap';
 import './transactions.css';
 
 // Components
