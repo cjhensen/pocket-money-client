@@ -18,7 +18,7 @@ export default function TransactionItem(props) {
             className={'item-remove ' + (props.showEditMode === true ? 'show' : "")}>x</li>
           <li 
             onClick={(e) => props.handleItemEditBtnClicked(e)} 
-            className={'item-edit ' + (props.showEditMode === true ? 'show' : "")}>[edit]</li>
+            className={'item-edit ' + (props.showEditMode === true ? '' : "")}>[edit]</li>
         </ul>
       </Col>
     </div>
