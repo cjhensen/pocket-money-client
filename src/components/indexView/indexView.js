@@ -1,5 +1,4 @@
 import React from 'react';
-import {Row, Col} from 'react-bootstrap';
 import logo from '../../images/logo.png';
 import './indexView.css';
 
