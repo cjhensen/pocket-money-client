@@ -10,6 +10,7 @@ import IndexViewContainer from '../indexView';
 import CategoriesContainer from '../categories';
 import TransactionsContainer from '../transactions';
 import OverviewContainer from '../overview';
+import SettingsContainer from '../settings';
 import NavBar from '../navBar';
 
 export class AppContainer extends React.Component {
@@ -36,7 +37,7 @@ export class AppContainer extends React.Component {
         case 'insights':
           return <div className="view-wrap">insights</div>;
         case 'settings':
-          return <div className="view-wrap">settings</div>;
+          return <SettingsContainer />;
         default:
           return <div>That page does not exist</div>;
       }

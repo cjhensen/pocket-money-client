@@ -8,7 +8,8 @@ import {
   LOG_IN_SUCCESS,
   ADD_ITEM_TO_LIST_SUCCESS,
   FETCH_INITIAL_USER_DATA_SUCCESS,
-  DELETE_LIST_ITEM_SUCCESS
+  DELETE_LIST_ITEM_SUCCESS,
+  LOGOUT_SUCCESS
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
@@ -32,6 +33,20 @@ const initialState = {
 };
 
 export const pmReducer = (state = initialState, action) => {
+
+  // Logout
+  if(action.type === LOGOUT_SUCCESS) {
+    console.log('reducer logout');
+    return Object.assign({}, state, {
+      currentView: 'index',
+      isLoggedIn: action.isLoggedIn,
+      userData: {
+        transactions: [],
+        categories: [],
+        income: []
+      }
+    });
+  }
 
   // Change View
   if(action.type === CHANGE_VIEW) {

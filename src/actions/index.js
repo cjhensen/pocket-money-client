@@ -39,8 +39,38 @@ export const setSelectedItem = (categoryItem) => ({
 });
 
 /* **************************************************
-   Login & Signup
+   Login, Logout, & Signup
  ************************************************** */
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+export const logoutSuccess = () => ({
+  type: LOGOUT_SUCCESS,
+  isLoggedIn: false
+});
+
+export const logout = () => dispatch => {
+  console.log('logout');
+
+  return fetch(`${API_BASE_URL}/logout`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json'
+    },
+    credentials: 'include'
+  })
+  .then(response => normalizeResponseErrors(response))
+  .then(response => {
+    if(!response.ok) {
+      console.log('error');
+    }
+    // console.log('response', response);
+    dispatch(logoutSuccess());
+  })
+  .catch(error => {
+    // const {code} = error;
+    throw(error);
+  })
+}
+
 export const registerUser = user => dispatch => {
   console.log('register user');
   return fetch(`${API_BASE_URL}/signup`, {
@@ -67,6 +97,7 @@ export const registerUser = user => dispatch => {
     throw(error);
   })
 };
+
 
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const logInSuccess = isLoggedIn => ({
