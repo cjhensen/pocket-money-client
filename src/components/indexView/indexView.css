@@ -38,12 +38,13 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#174272', endColorstr='#0f2d4e',GradientType=0 );
 }
 .auth-buttons {
-  position: absolute;
-  bottom: 30px;
+  // position: absolute;
+  // bottom: 30px;
   width: 220px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  // left: 0;
+  // right: 0;
+  margin-left: -5px;
+  margin-bottom: 30px;
 }
 .auth-buttons button {
   width: 100px;

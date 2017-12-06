@@ -49,8 +49,17 @@ export default function IndexView(props) {
             </header>
 
             <section>
+
               <Col xs={12} sm={5} smOffset={1}>
                 <p className="app-description">Pocket Money helps you to track you spending by creating a budget and staying on track. Log your transactions and easily see how much you've spent.</p>
+                <div className="auth-buttons">
+                  <button
+                    type="button"
+                    onClick={(e) => props.showSignUp(e)}>Sign Up</button>
+                  <button
+                    type="button"
+                    onClick={(e) => props.showLogIn(e)}>Log In</button>
+                </div>
               </Col>
               <Col xs={12} sm={5}>
                 <div className="screenshot ss-overview">
@@ -58,15 +67,6 @@ export default function IndexView(props) {
                 </div>
               </Col>
             </section>
-
-            <div className="auth-buttons">
-              <button
-                type="button"
-                onClick={(e) => props.showSignUp(e)}>Sign Up</button>
-              <button
-                type="button"
-                onClick={(e) => props.showLogIn(e)}>Log In</button>
-            </div>
 
           </div>
         </div>
