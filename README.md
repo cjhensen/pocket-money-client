@@ -13,9 +13,10 @@ Test the app
 Sign up with your own details (username and password) or use **demo details** **(username: demo, password: demo)**. 
 Add your income, set some categories and their spending limits, and add some transactions to track your spending!
 
-Note*
+Notes*
 ------------
 This app is a true single page app, meaning back/forward browser buttons do not work!
+There is a bug with mobile safari on iPhone with the cookies not being set properly, which causes user data to not be loaded on login.
 
 Summary
 -------
