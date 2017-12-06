@@ -167,7 +167,10 @@ export const logInUser = user => dispatch => {
 
   return fetch(`${API_BASE_URL}/userdata`, {
     method: 'GET',
-    credentials: 'include'
+    credentials: 'include',
+    headers: {
+      'content-type': 'application/json'
+    }
   })
   .then(response => normalizeResponseErrors(response))
   .then(response => response.json())
