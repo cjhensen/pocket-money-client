@@ -73,6 +73,8 @@ export const logout = () => dispatch => {
 
 export const registerUser = user => dispatch => {
   console.log('register user');
+  dispatch(resetAuthErrorMsg());
+
   return fetch(`${API_BASE_URL}/signup`, {
     method: 'POST',
     headers: {
@@ -163,14 +165,12 @@ export const logInUser = user => dispatch => {
  export const fetchInitialUserData = () => dispatch => {
   console.log('fetchInitialUserData');
 
-  dispatch(resetAuthErrorMsg());
-
   return fetch(`${API_BASE_URL}/userdata`, {
     method: 'GET',
+    credentials: 'include',
     headers: {
       'content-type': 'application/json'
-    },
-    credentials: 'include'
+    }
   })
   .then(response => normalizeResponseErrors(response))
   .then(response => response.json())
