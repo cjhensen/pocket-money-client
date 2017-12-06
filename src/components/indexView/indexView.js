@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col} from 'react-bootstrap';
-import {Slider} from 'react-slick';
+import Slider from 'react-slick';
 
 import './indexView.css';
 
