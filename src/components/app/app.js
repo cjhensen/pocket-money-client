@@ -24,7 +24,7 @@ export default function App(props) {
           <title>PocketMoney</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
         </Helmet>
 
         {viewComponent}
