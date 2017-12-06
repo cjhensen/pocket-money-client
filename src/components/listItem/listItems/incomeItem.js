@@ -9,8 +9,8 @@ export default function IncomeItem(props) {
       <Col xs={12}>
         <ul>
           <li className="item-label">{listItem.incomeName}</li>
-          <li className="item-pill income-recurring">{listItem.incomeRecurring.toString()}</li>
-          <li className="item-pill income-amount">{listItem.incomeAmount}</li>
+          <li className="item-pill income-recurring">&#x21BB; {listItem.incomeRecurring.toString()}</li>
+          <li className="item-pill income-amount">${listItem.incomeAmount}</li>
           <li 
             onClick={(e) => props.handleItemRemoveBtnClicked(e)} 
             className={'item-remove ' + (props.showEditMode === true ? 'show' : "")}></li>

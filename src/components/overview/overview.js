@@ -27,7 +27,7 @@ export default function Overview(props) {
             strokeColor="rgb(23, 66, 114)"
             railColor="rgb(200, 212, 224)"
             fillColor="none" />
-            <div className="remaining-budget-value">{props.remainingBudget.remainingMoney}</div>
+            <div className="remaining-budget-value">${props.remainingBudget.remainingMoney}</div>
             <div>Remaining Budget</div>
         </div>
 
@@ -38,7 +38,7 @@ export default function Overview(props) {
                 Savings
               </div>
               <div className="summary-item-value">
-                {props.savings}
+                ${props.savings}
               </div>
             </div>
           </Col>
@@ -48,7 +48,7 @@ export default function Overview(props) {
                 Total Estimated Savings
               </div>
               <div className="summary-item-value">
-                {props.totalEstSavings}
+                ${props.totalEstSavings}
               </div>
             </div>
           </Col>

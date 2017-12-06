@@ -41,6 +41,10 @@
   box-shadow: inset 0px 0px 15px 0px rgba(114,131,146,0.1);
   color: #728392;
 }
+.add-item form input[type="checkbox"] {
+  width: auto;
+  margin-left: 5px;
+}
 
 .add-item form select {
   width: 100%;

@@ -27,6 +27,7 @@ export default function IncomePopup(props) {
           </label>
 
           <label htmlFor="incomeRecurring">
+            Recurring?
             <input
               type="checkbox"
               id="incomeRecurring"

@@ -16,9 +16,9 @@ export default function CategoryItem(props) {
           <li className="item-meter">
             <MeterBarContainer percentage={props.spentPercentage} />
           </li>
-          <li className="item-pill category-remaining">{props.categoryRemaining}</li>
-          <li className="item-pill category-spent">{props.categorySpent}</li>
-          <li className="item-pill category-total">{listItem.totalBudget}</li>
+          <li className="item-pill category-remaining">${props.categoryRemaining}</li>
+          <li className="item-pill category-spent">${props.categorySpent}</li>
+          <li className="item-pill category-total">${listItem.totalBudget}</li>
           <li 
             onClick={(e) => props.handleItemRemoveBtnClicked(e)} 
             className={'item-remove ' + (props.showEditMode === true ? 'show' : "")}></li>

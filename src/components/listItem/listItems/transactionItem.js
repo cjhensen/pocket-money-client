@@ -12,7 +12,7 @@ export default function TransactionItem(props) {
         <ul>
           <li className="item-label">{listItem.transactionName}</li>
           <li className="item-pill transaction-category">{listItem.category}</li>
-          <li className="item-pill transaction-total">{listItem.moneySpent}</li>
+          <li className="item-pill transaction-total">${listItem.moneySpent}</li>
           <li 
             onClick={(e) => props.handleItemRemoveBtnClicked(e)} 
             className={'item-remove ' + (props.showEditMode === true ? 'show' : "")}></li>
