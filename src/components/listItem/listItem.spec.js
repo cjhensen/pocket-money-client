@@ -178,7 +178,7 @@ describe('IncomeItem', () => {
                             showEditMode={showEditMode}/>);
     expect(wrapper.find('.list-item').length).toBe(1);
     expect(wrapper.find('.item-label').text()).toEqual('work');
-    expect(wrapper.find('.income-recurring').text()).toEqual('false');
+    expect(wrapper.find('.income-recurring').text()).toEqual('↻ false');
     expect(wrapper.find('.income-amount').text()).toEqual('1000');
     expect(wrapper.find('.income-remove').length).toBe(0);
     expect(wrapper.find('.income-edit').length).toBe(0);
