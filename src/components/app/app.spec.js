@@ -19,7 +19,3 @@ describe('<AppContainer />', () => {
     expect(wrapper.find('IndexView').length).toBe(1);
   });
 });
-
-// global.requestAnimationFrame = function(callback) {
-//   setTimeout(callback, 0);
-// };

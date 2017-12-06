@@ -8,15 +8,6 @@ import LogIn from '../logIn';
 import {registerUser, logInUser, changeView, resetAuthErrorMsg} from '../../actions';
 
 export class AuthContainer extends React.Component {
-  // const authView = props.authView;
-  // let authComponent = null;
-
-  // if(this.props.authView === 'signup') {
-  //   authComponent = <SignUp />;
-  // }
-  // if(this.props.authView === 'login') {
-  //   authComponent = <LogIn />
-  // }
   handleSignInLinkClicked(e) {
     console.log('handleSignInLinkClicked');
     this.props.dispatch(resetAuthErrorMsg());

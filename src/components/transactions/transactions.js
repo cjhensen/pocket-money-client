@@ -16,12 +16,6 @@ export default function Transactions(props) {
   const transactionsListItems = props.transactionsListItems;
   const incomeListItems = props.incomeListItems;
 
-  // const listElements = listItems.map((item, index) => 
-  //   <ListItemContainer
-  //     listItemType={'transaction'}
-  //     listItem={item}
-  //     key={index} />
-  // );
   let listElements = [];
 
   let listItemType = "";
