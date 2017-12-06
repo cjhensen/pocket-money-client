@@ -1,9 +1,14 @@
 import React from 'react';
 import './signUp.css';
 
+import AuthNotificationContainer from '../authNotification';
+
 export default function SignUp(props) {
   return (
     <div id="sign-up">
+
+      <AuthNotificationContainer message={props.message}/>
+
       <form onSubmit={e => props.handleRegisterSubmit(e)}>
         <label htmlFor="username">
           <input type="text" name="username" id="username" placeholder="Username" required />

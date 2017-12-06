@@ -5,7 +5,7 @@ import Auth from './auth';
 import SignUp from '../signUp';
 import LogIn from '../logIn';
 
-import {registerUser, logInUser, changeView} from '../../actions';
+import {registerUser, logInUser, changeView, resetAuthErrorMsg} from '../../actions';
 
 export class AuthContainer extends React.Component {
   // const authView = props.authView;
@@ -19,11 +19,13 @@ export class AuthContainer extends React.Component {
   // }
   handleSignInLinkClicked(e) {
     console.log('handleSignInLinkClicked');
+    this.props.dispatch(resetAuthErrorMsg());
     this.props.dispatch(changeView('login'));
   }
 
   handleSignUpLinkClicked(e) {
     console.log('handleSignUpLinkClicked');
+    this.props.dispatch(resetAuthErrorMsg());
     this.props.dispatch(changeView('signup'));
   }
   handleRegisterSubmit(e) {
@@ -64,12 +66,14 @@ export class AuthContainer extends React.Component {
     if(authView === 'signup') {
       authComponent = <SignUp 
                         handleRegisterSubmit={e => this.handleRegisterSubmit(e)}
-                        handleSignInLinkClicked={e => this.handleSignInLinkClicked(e)} />;
+                        handleSignInLinkClicked={e => this.handleSignInLinkClicked(e)}
+                        message={this.props.authErrorMsg} />;
     }
     if(authView === 'login') {
       authComponent = <LogIn 
                         handleLogInSubmit={e => this.handleLogInSubmit(e)}
-                        handleSignUpLinkClicked={e => this.handleSignUpLinkClicked(e)} />
+                        handleSignUpLinkClicked={e => this.handleSignUpLinkClicked(e)}
+                        message={this.props.authErrorMsg} />
     }
 
     return (
@@ -77,5 +81,8 @@ export class AuthContainer extends React.Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  authErrorMsg: state.authErrorMsg
+});
 
-export default connect()(AuthContainer);
+export default connect(mapStateToProps)(AuthContainer);

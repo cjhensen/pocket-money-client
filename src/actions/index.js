@@ -94,6 +94,11 @@ export const registerUser = user => dispatch => {
     dispatch(logInSuccess(true));
   })
   .catch(error => {
+    const {code} = error;
+    if(code === 401) {
+      console.log('request failed');
+      dispatch(authFailure('Username already exists'));
+    }
     throw(error);
   })
 };
@@ -105,8 +110,21 @@ export const logInSuccess = isLoggedIn => ({
   isLoggedIn
 });
 
+export const AUTH_FAILURE = 'AUTH_FAILURE';
+export const authFailure = message => ({
+  type: AUTH_FAILURE,
+  message
+});
+
+export const RESET_AUTH_ERROR_MSG = 'RESET_AUTH_ERROR_MSG';
+export const resetAuthErrorMsg = () => ({
+  type: RESET_AUTH_ERROR_MSG
+});
+
 export const logInUser = user => dispatch => {
   console.log('logInUser');
+  dispatch(resetAuthErrorMsg());
+
   return fetch(`${API_BASE_URL}/login`, {
     method: 'POST',
     headers: {
@@ -127,6 +145,7 @@ export const logInUser = user => dispatch => {
     if(code === 401) {
       // Do something on failure
       console.log('request failed');
+      dispatch(authFailure('Incorrect Username or Password'));
     }
     throw(error);
   })
@@ -143,6 +162,8 @@ export const logInUser = user => dispatch => {
 
  export const fetchInitialUserData = () => dispatch => {
   console.log('fetchInitialUserData');
+
+  dispatch(resetAuthErrorMsg());
 
   return fetch(`${API_BASE_URL}/userdata`, {
     method: 'GET',

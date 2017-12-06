@@ -6,10 +6,12 @@ import {
   SET_ACTIVE_TAB,
   TOGGLE_EDIT_MODE,
   LOG_IN_SUCCESS,
+  AUTH_FAILURE,
   ADD_ITEM_TO_LIST_SUCCESS,
   FETCH_INITIAL_USER_DATA_SUCCESS,
   DELETE_LIST_ITEM_SUCCESS,
-  LOGOUT_SUCCESS
+  LOGOUT_SUCCESS,
+  RESET_AUTH_ERROR_MSG
 } from '../actions';
 
 // index, signup, login, overview, transactions, categories, insights, settings
@@ -115,6 +117,22 @@ export const pmReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       isLoggedIn: action.isLoggedIn,
       currentView: 'overview'
+    });
+  }
+
+  // Log In Failure
+  if(action.type === AUTH_FAILURE) {
+    console.log('log in failure');
+    return Object.assign({}, state, {
+      authErrorMsg: action.message
+    });
+  }
+
+  // Reset auth error message
+  if(action.type === RESET_AUTH_ERROR_MSG) {
+    console.log('reset auth error message');
+    return Object.assign({}, state, {
+      authErrorMsg: null
     });
   }
 

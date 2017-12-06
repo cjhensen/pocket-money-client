@@ -1,8 +1,13 @@
 import React from 'react';
 
+import AuthNotificationContainer from '../authNotification';
+
 export default function SignUp(props) {
   return (
     <div id="log-in">
+
+      <AuthNotificationContainer message={props.message} />
+
       <form onSubmit={e => props.handleLogInSubmit(e)}>
 
         <label htmlFor="username">
