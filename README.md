@@ -51,6 +51,7 @@ Files
  - slick-carousel
 
 **Scripts**
+
 The basic React scripts out of the box
 
  - npm start: starts the app
