@@ -12,7 +12,7 @@ Pocket Money
 
 Test the app
 ------------
-Sign up with your own details (username and password) or use **demo details** ***(username: demo, password: demo)***. 
+Sign up with your own details (username and password) or use **demo details** **(username: demo, password: demo)**. 
 Add your income, set some categories and their spending limits, and add some transactions to track your spending!
 
 Summary
@@ -23,7 +23,8 @@ Planned Features
 ----------------
 An insights view is planned for down the road to give the user a more in depth view of their spending with a series of graphs and charts.
 
-**Files**
+Files
+----------------
 
  - src
    - config.js: database config variables
