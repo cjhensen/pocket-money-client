@@ -17,16 +17,23 @@
   color: #728392;
 }
 
-#sign-up button,
-#log-in button {
+.auth-switcher {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.auth-switcher-btn {
+  width: auto;
+  display: inline-block;
+  color: #18406f;
+  text-decoration: underline;
+}
+
+#sign-up .auth-btn,
+#log-in .auth-btn {
   width: 100%;
   padding: 15px;
   background: #174272;
   border-radius: 10px;
   color: #fff;
-}
-
-.auth-switcher {
-  margin-top: 10px;
-  text-align: center;
 }

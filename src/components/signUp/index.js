@@ -13,11 +13,11 @@ export default function SignUp(props) {
           <input type="password" name="password" id="password" placeholder="Password" required />
         </label>
 
-        <button type="submit">Sign Up</button>
+        <button className="auth-btn" type="submit">Sign Up</button>
 
       </form>
 
-      <div className="auth-switcher">Already have an account? <a href="https://www.google.com">Sign in</a></div>
+      <div className="auth-switcher">Already have an account?<button className="auth-switcher-btn" onClick={(e) => props.handleSignInLinkClicked(e)}>Sign In</button></div>
     </div>
   );
 }

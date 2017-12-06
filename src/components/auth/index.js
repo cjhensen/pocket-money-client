@@ -5,7 +5,7 @@ import Auth from './auth';
 import SignUp from '../signUp';
 import LogIn from '../logIn';
 
-import {registerUser, logInUser} from '../../actions';
+import {registerUser, logInUser, changeView} from '../../actions';
 
 export class AuthContainer extends React.Component {
   // const authView = props.authView;
@@ -17,7 +17,15 @@ export class AuthContainer extends React.Component {
   // if(this.props.authView === 'login') {
   //   authComponent = <LogIn />
   // }
+  handleSignInLinkClicked(e) {
+    console.log('handleSignInLinkClicked');
+    this.props.dispatch(changeView('login'));
+  }
 
+  handleSignUpLinkClicked(e) {
+    console.log('handleSignUpLinkClicked');
+    this.props.dispatch(changeView('signup'));
+  }
   handleRegisterSubmit(e) {
     console.log('handleRegisterSubmit');
     e.preventDefault();
@@ -54,10 +62,14 @@ export class AuthContainer extends React.Component {
     let authComponent = null;
 
     if(authView === 'signup') {
-      authComponent = <SignUp handleRegisterSubmit={e => this.handleRegisterSubmit(e)} />;
+      authComponent = <SignUp 
+                        handleRegisterSubmit={e => this.handleRegisterSubmit(e)}
+                        handleSignInLinkClicked={e => this.handleSignInLinkClicked(e)} />;
     }
     if(authView === 'login') {
-      authComponent = <LogIn handleLogInSubmit={e => this.handleLogInSubmit(e)} />
+      authComponent = <LogIn 
+                        handleLogInSubmit={e => this.handleLogInSubmit(e)}
+                        handleSignUpLinkClicked={e => this.handleSignUpLinkClicked(e)} />
     }
 
     return (
