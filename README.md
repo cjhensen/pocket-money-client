@@ -4,11 +4,9 @@ Pocket Money
 [Live Demo!](pocketmoney.netlify.com)
 -------------------------------------
 
-![enter image description here](http://oi65.tinypic.com/eijwg3.jpg)
+![Overview](http://oi65.tinypic.com/eijwg3.jpg) ![Categories (Mobile)](http://oi65.tinypic.com/io2kpj.jpg)
 
-![enter image description here](http://oi65.tinypic.com/io2kpj.jpg)
-
-![enter image description here](http://oi65.tinypic.com/14ayejs.jpg)
+![Categories (Desktop)](http://oi65.tinypic.com/14ayejs.jpg)
 
 Test the app
 ------------
