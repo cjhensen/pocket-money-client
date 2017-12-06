@@ -135,9 +135,9 @@ describe('CategoryItem', () => {
                             transactions={transactions} />);
     expect(wrapper.find('.list-item').length).toBe(1);
     expect(wrapper.find('.item-label').text()).toEqual('test');
-    expect(wrapper.find('.category-remaining').text()).toEqual('180');
-    expect(wrapper.find('.category-spent').text()).toEqual('20');
-    expect(wrapper.find('.category-total').text()).toEqual('200');
+    expect(wrapper.find('.category-remaining').text()).toEqual('$180');
+    expect(wrapper.find('.category-spent').text()).toEqual('$20');
+    expect(wrapper.find('.category-total').text()).toEqual('$200');
   });
 });
 
@@ -158,7 +158,7 @@ describe('TransactionItem', () => {
     expect(wrapper.find('.list-item').length).toBe(1);
     expect(wrapper.find('.item-label').text()).toEqual('test1');
     expect(wrapper.find('.transaction-category').text()).toEqual('test');
-    expect(wrapper.find('.transaction-total').text()).toEqual('10');
+    expect(wrapper.find('.transaction-total').text()).toEqual('$10');
   });
 });
 
@@ -179,7 +179,7 @@ describe('IncomeItem', () => {
     expect(wrapper.find('.list-item').length).toBe(1);
     expect(wrapper.find('.item-label').text()).toEqual('work');
     expect(wrapper.find('.income-recurring').text()).toEqual('↻ false');
-    expect(wrapper.find('.income-amount').text()).toEqual('1000');
+    expect(wrapper.find('.income-amount').text()).toEqual('$1000');
     expect(wrapper.find('.income-remove').length).toBe(0);
     expect(wrapper.find('.income-edit').length).toBe(0);
   });
