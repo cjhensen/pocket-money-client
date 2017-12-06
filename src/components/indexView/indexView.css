@@ -54,9 +54,9 @@ header {
   background: #23d2a7;
   color: #fff;
 
-  -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
-  -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
 }
 .screenshot img {
   margin: 0 auto;
