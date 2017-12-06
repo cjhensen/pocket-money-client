@@ -13,6 +13,10 @@ Test the app
 Sign up with your own details (username and password) or use **demo details** **(username: demo, password: demo)**. 
 Add your income, set some categories and their spending limits, and add some transactions to track your spending!
 
+Note*
+------------
+This app is a true single page app, meaning back/forward browser buttons do not work!
+
 Summary
 -------
 Pocket Money helps you to track you spending by creating a budget and staying on track. Set your income, create categories with spending limits, then log your daily transactions to track your spending.
@@ -20,6 +24,9 @@ Pocket Money helps you to track you spending by creating a budget and staying on
 Planned Features
 ----------------
 An insights view is planned for down the road to give the user a more in depth view of their spending with a series of graphs and charts.
+Recurring income handling.
+Monthly income. View previous months.
+Direct field editing of existing list items.
 
 Files
 ----------------
